@@ -1,0 +1,1091 @@
+/* CSS DO INDEX  */
+
+:root {
+    --bg: #0f1b3d;
+    --panel: rgba(20, 28, 60, .92);
+    --border: #2b3a6b;
+    --text: #f4f6ff;
+    --muted: #a9b3d6;
+    --accent: #f5c518;
+    --pink: #ff6ea6;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html,
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "VT323", monospace;
+    font-size: 18px;
+    image-rendering: pixelated;
+    overflow-x: hidden
+}
+
+h1,
+h2,
+h3,
+.pixel,
+.label,
+.key,
+.btn-icon,
+.coin .bubble,
+.hint-bubble,
+.dpad button,
+.cv,
+.modal-head h2,
+.modal-head button,
+.socials a {
+    font-family: "Press Start 2P", monospace
+}
+
+.accent {
+    color: var(--accent)
+}
+
+.muted {
+    color: var(--muted)
+}
+
+/* Marquee */
+.marquee {
+    overflow: hidden;
+    border-top: 2px solid var(--border);
+    border-bottom: 2px solid var(--border);
+    background: rgba(0, 0, 0, .4);
+    padding: 8px 0
+}
+
+.marquee-track {
+    display: inline-block;
+    white-space: nowrap;
+    color: var(--accent);
+    font-family: "Press Start 2P", monospace;
+    font-size: 10px;
+    letter-spacing: .2em;
+    animation: marquee 40s linear infinite
+}
+
+@keyframes marquee {
+    to {
+        transform: translateX(-50%)
+    }
+}
+
+/* Panel */
+.panel {
+    background: var(--panel);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, .4), 0 10px 30px rgba(0, 0, 0, .45);
+    backdrop-filter: blur(4px)
+}
+
+/* Stage */
+.stage {
+    max-width: 1600px;
+    margin: 24px auto;
+    padding: 0 16px
+}
+
+.map {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/10;
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    background: #1a3a1a url("../imagens/mapa1.jpg") center/cover no-repeat;
+    image-rendering: pixelated
+}
+
+/* Greeting */
+@media (max-width:768px){
+
+.greeting{
+
+    top:18px;
+    left:18px;
+
+    right:170px;
+
+    max-width:none;
+
+}
+
+}
+
+.greeting{
+
+    background:rgba(12,20,45,.55);
+
+    padding:12px;
+
+    border-radius:12px;
+
+    backdrop-filter:blur(3px);
+
+}
+
+.greeting p {
+    margin-top: 12px;
+    font-size: 20px;
+    color: rgba(255, 255, 255, .9)
+}
+
+/* Top buttons */
+@media (max-width:768px){
+
+    .top-buttons{
+
+        top:12px;
+        right:12px;
+
+        gap:8px;
+
+    }
+
+    .btn-icon{
+
+        width:42px;
+        min-width:42px;
+
+        height:42px;
+
+        font-size:10px;
+
+        padding:0;
+
+    }
+
+}
+
+.btn-icon {
+    background: var(--panel);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    min-width: 44px;
+    height: 44px;
+    padding: 0 12px;
+    font-size: 12px;
+    color: #fff;
+    cursor: pointer
+}
+
+.btn-icon:hover {
+    color: var(--accent)
+}
+
+/* Controls */
+.controls {
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 240px;
+    padding: 16px;
+    z-index: 5
+}
+
+.controls .label {
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: .2em;
+    margin-bottom: 12px
+}
+
+.controls .row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px
+}
+
+.keys {
+    display: flex;
+    gap: 4px
+}
+
+.key {
+    background: var(--panel);
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 8px;
+    min-width: 24px;
+    text-align: center;
+    font-size: 9px;
+    color: #fff
+}
+
+.controls .row span:last-child {
+    margin-left: auto;
+    color: #fff
+}
+
+.hint {
+    margin-top: 12px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, .7);
+    line-height: 1.3
+}
+
+/* Coins */
+.coin{
+    position:absolute;
+    transform:translate(-50%,-50%);
+
+    width:58px;
+    height:58px;
+
+    border:3px solid #8a4d00;
+    border-radius:6px;
+
+    background:linear-gradient(
+        to bottom,
+        #ffd54f 0%,
+        #ffca28 45%,
+        #f9a825 100%
+    );
+
+    cursor:pointer;
+
+    box-shadow:
+        inset 0 3px 0 rgba(255,255,255,.35),
+        inset 0 -4px 0 rgba(0,0,0,.2),
+        0 6px 10px rgba(0,0,0,.35);
+
+    animation:floatBox 1.5s ease-in-out infinite;
+}
+
+.coin::before{
+    content:"?";
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-family:"Press Start 2P";
+    font-size:22px;
+    color:white;
+    text-shadow:2px 2px 0 #8a4d00;
+}
+
+.coin .bubble{
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 12px);
+
+    transform: translateX(-50%);
+
+    background: rgba(20, 28, 60, .95);
+    border: 2px solid #2b3a6b;
+    border-radius: 8px;
+
+    padding: 8px 10px;
+
+    color: #fff;
+    font-family: "Press Start 2P", monospace;
+    font-size: 10px;
+
+    white-space: nowrap;
+    z-index: 100;
+}
+
+@keyframes floatBox{
+
+    0%,100%{
+        transform:translate(-50%,-50%);
+    }
+
+    50%{
+        transform:translate(-50%,-56%);
+    }
+
+}
+
+/* Character */
+.character {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    z-index: 4;
+    transition: left .2s ease, top .2s ease
+}
+
+.sprite {
+    width: 120px;
+    height: 120px;
+    background: url("../imagens/personagem.png") center/contain no-repeat;
+    animation: bob 1.2s ease-in-out infinite;
+    filter: drop-shadow(0 4px 0 rgba(0, 0, 0, .4))
+}
+
+.hint-bubble {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 8px);
+    transform: translateX(-50%);
+    background: var(--panel);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 9px;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    line-height: 1.4
+}
+
+@keyframes bob {
+
+    0%,
+    100% {
+        transform: translateY(0)
+    }
+
+    50% {
+        transform: translateY(-4px)
+    }
+}
+
+/* Minimap */
+.minimap {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    padding: 8px;
+    z-index: 5
+}
+
+.mini-inner {
+    position: relative;
+    width: 200px;
+    aspect-ratio: 16/10;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    background: url("../imagens/mapa.jpg") center/cover
+}
+
+.mini-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--pink);
+    border: 1px solid #fff;
+    transform: translate(-50%, -50%)
+}
+
+/* D-Pad */
+.dpad {
+    position: absolute;
+
+    right: 24px;
+    bottom: 250px;   /* fica acima do minimapa */
+
+    display: grid;
+    grid-template-columns: repeat(3, 44px);
+    grid-template-rows: repeat(3, 44px);
+    gap: 6px;
+
+    z-index: 5;
+}
+
+.dpad button {
+    background: var(--panel);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer
+}
+
+
+.dpad button:hover {
+    color: var(--accent)
+}
+
+.dpad button:active {
+    transform: scale(.95)
+}
+
+.dpad button[data-dir="up"] {
+    grid-column: 2;
+    grid-row: 1
+}
+
+.dpad button[data-dir="left"] {
+    grid-column: 1;
+    grid-row: 2
+}
+
+.dpad button[data-dir="right"] {
+    grid-column: 3;
+    grid-row: 2
+}
+
+.dpad button[data-dir="down"] {
+    grid-column: 2;
+    grid-row: 3
+}
+
+
+/* Modal */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .7);
+    display: grid;
+    place-items: center;
+    z-index: 50;
+    padding: 16px
+}
+
+.modal[hidden] {
+    display: none
+}
+
+.modal-card {
+    max-width: 520px;
+    width: 100%;
+    padding: 24px
+}
+
+.modal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px
+}
+
+.modal-head h2 {
+    font-size: 14px;
+    color: var(--accent)
+}
+
+.modal-head button {
+    background: none;
+    border: 0;
+    color: rgba(255, 255, 255, .7);
+    font-size: 11px;
+    cursor: pointer
+}
+
+.modal-head button:hover {
+    color: #fff
+}
+
+#modalBody {
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, .9)
+}
+
+/* Footer */
+.footer {
+    margin-top: 40px;
+    border-top: 2px solid var(--border);
+    background: rgba(0, 0, 0, .5)
+}
+
+.footer-grid {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 32px
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.brand h3 {
+    font-size: 14px
+}
+
+.star {
+    color: var(--accent);
+    font-size: 24px
+}
+
+.footer-brand>p {
+    margin-top: 8px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, .7)
+}
+
+.socials{
+    display:flex;
+    gap:10px;
+    margin-top:18px;
+}
+
+.socials a{
+    width:44px;
+    height:44px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+    font-size:20px;
+
+    transition:.2s ease;
+}
+
+.socials a:hover{
+    transform:translateY(-3px);
+}
+
+.label {
+    font-family: "Press Start 2P", monospace;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: .2em;
+    margin-bottom: 12px
+}
+
+.footer ul{
+    list-style: none;
+}
+
+.footer li{
+    margin: 8px 0;
+}
+
+.footer li a{
+    color: rgba(255,255,255,.8);
+    text-decoration: none;
+    transition: .3s;
+}
+
+.footer li a:hover{
+    color: var(--accent);
+}
+
+.cv {
+    margin-top: 16px;
+    padding: 10px 16px;
+    font-size: 10px;
+    color: var(--accent);
+    cursor: pointer;
+    background: var(--panel);
+    border: 2px solid var(--border);
+    border-radius: 10px
+}
+
+.cv{
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+
+.cv:hover {
+    color: #fff
+}
+
+.copyright {
+    border-top: 1px solid var(--border);
+    padding: 16px;
+    text-align: center;
+    font-size: 16px;
+    color: rgba(255, 255, 255, .6)
+}
+
+@media (max-width:768px) {
+    .greeting h1 {
+        font-size: 16px
+    }
+
+    .controls,
+    .minimap {
+        display: none
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+/* ---------- RESPONSIVO ---------- */
+
+/* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+  .map { aspect-ratio: 4 / 3; }
+  .greeting h1 { font-size: 20px; }
+  .greeting p  { font-size: 16px; }
+  .controls { width: 200px; padding: 12px; }
+  .mini { width: 160px; }
+}
+
+/* Telemóvel (≤ 768px) */
+@media (max-width: 768px) {
+  .marquee { font-size: 8px; }
+
+  .map {
+    aspect-ratio: 3 / 4;         /* mapa em retrato */
+    border-radius: 8px;
+  }
+
+  .greeting {
+    top: 10px; left: 10px; right: 10px;
+    max-width: none;
+  }
+  .greeting h1 { font-size: 16px; line-height: 1.3; }
+  .greeting p  { font-size: 14px; }
+
+  .top-buttons { top: 10px; right: 10px; gap: 6px; }
+  .top-buttons button { height: 40px; min-width: 40px; padding: 0 8px; font-size: 10px; }
+
+  /* esconde painel de controlos e minimapa em mobile */
+  .controls,
+  .mini { display: none; }
+
+  /* d-pad fixo em baixo à direita */
+  .dpad {
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    z-index: 40;
+  }
+  .dpad button { height: 44px; width: 44px; font-size: 18px; }
+
+  /* moedas menores */
+  .coin { width: 40px; height: 40px; }
+  .coin-label { font-size: 8px; padding: 4px 6px; }
+
+  /* personagem menor */
+  .character { width: 56px; height: 56px; }
+
+  /* modal ocupa quase tudo */
+  .modal-content {
+    width: 92%;
+    padding: 18px;
+  }
+  .modal-content h2 { font-size: 12px; }
+  .modal-content p  { font-size: 14px; }
+
+  /* footer em coluna */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+    text-align: left;
+  }
+}
+
+/* Telemóvel pequeno (≤ 380px) */
+@media (max-width: 380px) {
+  .greeting h1 { font-size: 14px; }
+  .coin { width: 34px; height: 34px; }
+  .character { width: 48px; height: 48px; }
+}
+
+/* Landscape baixo — evita mapa gigante */
+@media (max-height: 500px) and (orientation: landscape) {
+  .map { aspect-ratio: 16 / 9; }
+  .controls { display: none; }
+}
+
+/* ===========================
+   DARK MODE
+=========================== */
+
+body.dark-mode{
+
+    --bg:#060b16;
+
+    --panel:rgba(7,12,28,.94);
+
+    --border:#425fb4;
+
+    --text:#ffffff;
+
+    --muted:#bfc9ef;
+
+    --accent:#ffd84f;
+
+    --pink:#ff79b0;
+
+}
+
+#map{
+    touch-action:none;
+}
+
+.character{
+    touch-action:none;
+    user-select:none;
+    -webkit-user-select:none;
+}
+
+
+
+
+/* CSS DO CONTACTO  */
+
+
+/* ===========================
+   CONTACTO
+=========================== */
+
+body{
+    background:#0f1b3d;
+    overflow-x:hidden;
+}
+
+.contact-page{
+
+    min-height:100vh;
+
+    background:
+        linear-gradient(rgba(7,15,35,.55),rgba(7,15,35,.8)),
+        url("../imagens/castelo-contacto.png") center/cover no-repeat;
+
+    padding:80px 20px;
+
+}
+
+/* ---------- HERO ---------- */
+
+.contact-header{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    padding-bottom:60px;
+
+}
+
+.contact-header h1{
+
+    font-family:"Press Start 2P";
+
+    font-size:30px;
+
+    color:var(--accent);
+
+    margin-bottom:30px;
+
+}
+
+.contact-header p{
+
+    font-size:28px;
+
+    line-height:1.6;
+
+    color:white;
+
+}
+
+/* ---------- PERSONAGEM ---------- */
+
+.hero-character{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:70px;
+
+    position:relative;
+
+}
+
+.player{
+
+    width:180px;
+
+    height:180px;
+
+    background:url("../imagens/personagem.png") center/contain no-repeat;
+
+    animation:floatPlayer 2s ease-in-out infinite;
+
+    z-index:2;
+
+}
+
+.contact-page{
+
+    min-height:100vh;
+
+    background:
+        linear-gradient(rgba(8,12,30,.30), rgba(8,12,30,.80)),
+        url("../imagens/mapacontacto.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+@keyframes floatPlayer{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+/* ---------- CARDS ---------- */
+
+.contact-cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    margin-bottom:70px;
+
+}
+
+.contact-card{
+
+    text-decoration:none;
+
+    color:white;
+
+    background:var(--panel);
+
+    border:2px solid var(--border);
+
+    border-radius:14px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.25s;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.4);
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--accent);
+
+}
+
+.contact-card i{
+
+    font-size:42px;
+
+    color:var(--accent);
+
+    margin-bottom:20px;
+
+}
+
+.contact-card h2{
+
+    font-family:"Press Start 2P";
+
+    font-size:12px;
+
+    margin-bottom:18px;
+
+}
+
+.contact-card p{
+
+    font-size:24px;
+
+}
+
+/* ---------- FORM ---------- */
+
+.form-area{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.form-panel{
+
+    padding:45px;
+
+}
+
+.form-panel h2{
+
+    text-align:center;
+
+    color:var(--accent);
+
+    margin-bottom:35px;
+
+    font-family:"Press Start 2P";
+
+    font-size:16px;
+
+}
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+label{
+
+    font-family:"Press Start 2P";
+
+    font-size:10px;
+
+    color:var(--accent);
+
+}
+
+input,
+textarea{
+
+    background:#111b37;
+
+    border:2px solid var(--border);
+
+    color:white;
+
+    padding:16px;
+
+    font-family:"VT323";
+
+    font-size:26px;
+
+    border-radius:10px;
+
+    outline:none;
+
+}
+
+input:focus,
+textarea:focus{
+
+    border-color:var(--accent);
+
+}
+
+button{
+
+    margin-top:20px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:var(--accent);
+
+    font-family:"Press Start 2P";
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* ---------- BOTÃO ---------- */
+
+.back-home{
+
+    text-align:center;
+
+    margin-top:70px;
+
+}
+
+.back-home a{
+
+    display:inline-block;
+
+    padding:16px 28px;
+
+    color:white;
+
+    text-decoration:none;
+
+}
+
+/* ---------- RESPONSIVO ---------- */
+
+@media(max-width:768px){
+
+.contact-header h1{
+
+    font-size:18px;
+
+}
+
+.contact-header p{
+
+    font-size:22px;
+
+}
+
+.player{
+
+    width:120px;
+
+    height:120px;
+
+}
+
+.castle{
+
+    width:280px;
+
+}
+
+.form-panel{
+
+    padding:25px;
+
+}
+
+}
