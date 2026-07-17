@@ -1,190 +1,63 @@
-// ==============================
-// PROJETOS
-// ==============================
+const projetos = {
 
-const projetos = [
+    casa:{
 
-    {
-        titulo: "Casa da Árvore",
-        categoria: "identidade",
-        imagem: "img/branding/casa-arvore.jpg",
-        descricao: "Criação completa da identidade visual da marca.",
-        pdf: "pdf/casa-arvore.pdf"
+        titulo:"Casa da Árvore",
+
+        imagem:"../img/logos/casa-arvore.png",
+
+        descricao:"Criação completa da identidade visual da marca.",
+
+        pdf:"../pdf/casa-arvore.pdf"
+
     },
 
-    {
-        titulo: "Café Torres",
-        categoria: "rebranding",
-        imagem: "img/branding/cafe-torres.jpg",
-        descricao: "Redesign da identidade visual do Café Torres.",
-        pdf: "pdf/cafe-torres.pdf"
+    cafe:{
+
+        titulo:"Café Torres",
+
+        imagem:"../img/logos/cafe-torres.png",
+
+        descricao:"Redesign da identidade visual.",
+
+        pdf:"../pdf/cafe-torres.pdf"
+
     },
 
-    {
-        titulo: "Rótulo Criativo",
-        categoria: "logo",
-        imagem: "img/branding/rotulo.jpg",
-        descricao: "Identidade visual da minha marca pessoal.",
-        pdf: "pdf/rotulo-criativo.pdf"
+    rotulo:{
+
+        titulo:"Rótulo Criativo",
+
+        imagem:"../img/logos/rotulo.png",
+
+        descricao:"Identidade visual da minha marca.",
+
+        pdf:"../pdf/rotulo.pdf"
+
     },
 
-    {
-        titulo: "Studio One",
-        categoria: "identidade",
-        imagem: "img/branding/studio.jpg",
-        descricao: "Projeto de branding completo.",
-        pdf: "pdf/studio.pdf"
-    }
+    projeto4:{
 
-];
+        titulo:"Projeto 4",
 
+        imagem:"../img/logos/projeto4.png",
 
-// ==============================
-// ELEMENTOS
-// ==============================
+        descricao:"Projeto em desenvolvimento.",
 
-const grid = document.getElementById("portfolioGrid");
-
-const modal = document.getElementById("modal");
-
-const modalImage = document.getElementById("modalImage");
-
-const modalTitle = document.getElementById("modalTitle");
-
-const modalDescription = document.getElementById("modalDescription");
-
-const pdfButton = document.getElementById("pdfButton");
-
-const close = document.querySelector(".close");
-
-
-// ==============================
-// GERAR CARDS
-// ==============================
-
-function mostrarProjetos(categoria = "all") {
-
-    grid.innerHTML = "";
-
-    let lista = projetos;
-
-    if (categoria !== "all") {
-
-        lista = projetos.filter(projeto => projeto.categoria === categoria);
+        pdf:"#"
 
     }
 
-    lista.forEach(projeto => {
+};
 
-        const card = document.createElement("div");
+document.querySelectorAll(".project-card").forEach(card=>{
 
-        card.classList.add("card");
+    card.addEventListener("click",()=>{
 
-        card.innerHTML = `
+        const projeto=projetos[card.dataset.id];
 
-            <img src="${projeto.imagem}" alt="${projeto.titulo}">
-
-            <div class="card-info">
-
-                <h3>${projeto.titulo}</h3>
-
-                <p>${projeto.descricao}</p>
-
-                <span>${projeto.categoria}</span>
-
-            </div>
-
-            <div class="ver-projeto">
-
-                📄
-
-            </div>
-
-        `;
-
-        card.addEventListener("click", () => abrirModal(projeto));
-
-        grid.appendChild(card);
+        abrirModal(projeto);
 
     });
-
-}
-
-mostrarProjetos();
-
-
-// ==============================
-// FILTROS
-// ==============================
-
-const botoes = document.querySelectorAll(".filtros button");
-
-botoes.forEach(botao => {
-
-    botao.addEventListener("click", () => {
-
-        botoes.forEach(btn => btn.classList.remove("active"));
-
-        botao.classList.add("active");
-
-        mostrarProjetos(botao.dataset.filter);
-
-    });
-
-});
-
-
-// ==============================
-// MODAL
-// ==============================
-
-function abrirModal(projeto){
-
-    modal.classList.add("show");
-
-    modalImage.src = projeto.imagem;
-
-    modalTitle.textContent = projeto.titulo;
-
-    modalDescription.textContent = projeto.descricao;
-
-    pdfButton.href = projeto.pdf;
-
-}
-
-
-// ==============================
-// FECHAR
-// ==============================
-
-close.addEventListener("click", () => {
-
-    modal.classList.remove("show");
-
-});
-
-
-modal.addEventListener("click",(e)=>{
-
-    if(e.target === modal){
-
-        modal.classList.remove("show");
-
-    }
-
-});
-
-
-// ==============================
-// ESC
-// ==============================
-
-document.addEventListener("keydown",(e)=>{
-
-    if(e.key==="Escape"){
-
-        modal.classList.remove("show");
-
-    }
 
 });
