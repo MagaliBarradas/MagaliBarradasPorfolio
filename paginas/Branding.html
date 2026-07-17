@@ -1,180 +1,348 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt">
 
 <head>
+
     <meta charset="utf-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Magali Barradas — Portfólio Criativo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0e1a2b" />
+
+    <title>Branding | Magali Barradas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
 <body>
 
-    <!-- Marquee -->
+    <!--=========================
+        MARQUEE
+    ==========================-->
+
     <div class="marquee">
-        <div class="marquee-track" id="marquee"></div>
+
+        <div class="marquee-track" id="marquee">
+
+        </div>
+
     </div>
-    <!-- Mapa -->
+
+
+    <!--=========================
+        MAPA
+    ==========================-->
+
     <main class="stage">
-        <div class="map" id="map">
+
+        <div class="map branding-map" id="map">
+
+            <!--=========================
+                HERO
+            ==========================-->
+
             <header class="greeting">
-                <h1>Olá, Sou a <span class="accent">Magali</span></h1>
-                <p>Explore meu mundo e descubra mais sobre mim! <span class="accent">✦</span></p>
+
+                <h1>
+
+                    Branding <span class="accent">World</span>
+
+                </h1>
+
+                <p>
+
+                    Explore meus projetos de identidade visual.
+
+                </p>
+
             </header>
 
+
+            <!--=========================
+                BOTÕES SUPERIORES
+            ==========================-->
+
             <div class="top-buttons">
-                <button class="panel btn-icon">♪</button>
-                <button class="panel btn-icon" id="themeBtn">☾</button>
-                <button class="panel btn-icon">PT</button>
+
+                <button class="panel btn-icon">
+
+                    ♪
+
+                </button>
+
+                <button class="panel btn-icon" id="themeBtn">
+
+                    ☾
+
+                </button>
+
+                <button class="panel btn-icon">
+
+                    PT
+
+                </button>
+
             </div>
+
+
+            <!--=========================
+                CONTROLES
+            ==========================-->
 
             <aside class="panel controls">
-                <div class="label">CONTROLOS</div>
-                <div class="row">
-                    <div class="keys"><span class="key">🡅</span><span class="key">🡇</span><span
-                            class="key">🡄</span><span class="key">🡆</span></div><span>Mover</span>
+
+                <div class="label">
+
+                    CONTROLOS
+
                 </div>
 
                 <div class="row">
-                    <div class="keys"><span class="key">Enter</span></div><span>Interagir</span>
+
+                    <div class="keys">
+
+                        <span class="key">🡅</span>
+
+                        <span class="key">🡇</span>
+
+                        <span class="key">🡄</span>
+
+                        <span class="key">🡆</span>
+
+                    </div>
+
+                    <span>Mover</span>
+
                 </div>
+
                 <div class="row">
-                    <div class="keys"><span class="key">Esc</span></div><span>Fechar</span>
+
+                    <div class="keys">
+
+                        <span class="key">Enter</span>
+
+                    </div>
+
+                    <span>Abrir Projeto</span>
+
                 </div>
-                <p class="hint">Explore o mapa e descubra cada área do meu portfólio!</p>
+
+                <div class="row">
+
+                    <div class="keys">
+
+                        <span class="key">Esc</span>
+
+                    </div>
+
+                    <span>Fechar</span>
+
+                </div>
+
+                <p class="hint">
+
+                    Caminhe pelo mapa e descubra cada projeto.
+
+                </p>
+
             </aside>
 
-            <!-- Moedas -->
-            <button class="coin" data-id="sobre" style="left:22%;top:68%"><span class="bubble">Sobre Mim</span></button>
-            <button class="coin" data-id="ux" style="left:71%;top:69%"><span class="bubble">UI/UX Frontend
-                    </span></button>
-            <button class="coin" data-id="branding" style="left:29%;top:25%"><span
-                    class="bubble">Branding</span></button>
-            <button class="coin" data-id="contacto" style="left:74%;top:20%"><span
-                    class="bubble">Contacto</span></button>
 
-            <!-- Personagem -->
-            <div class="character" id="char" style="left:45%;top:72%">
-                <div class="bubble hint-bubble">Use as setas<br />para mover</div>
-                <div class="sprite"></div>
-            </div>
+            <!--=========================
+                PROJETOS
+            ==========================-->
 
-            <!-- Minimapa -->
-            <div class="panel minimap">
-                <div class="mini-inner">
-                    <div class="mini-dot" id="miniDot"></div>
+            <button class="coin"
+                data-id="casa"
+                style="left:22%;top:25%;">
+
+                <span class="bubble">
+
+                    Casa da Árvore
+
+                </span>
+
+            </button>
+
+
+            <button class="coin"
+                data-id="cafe"
+                style="left:72%;top:28%;">
+
+                <span class="bubble">
+
+                    Café Torres
+
+                </span>
+
+            </button>
+
+
+            <button class="coin"
+                data-id="rotulo"
+                style="left:28%;top:72%;">
+
+                <span class="bubble">
+
+                    Rótulo Criativo
+
+                </span>
+
+            </button>
+
+
+            <button class="coin"
+                data-id="projeto4"
+                style="left:73%;top:72%;">
+
+                <span class="bubble">
+
+                    Projeto 4
+
+                </span>
+
+            </button>
+
+
+            <button class="coin"
+                data-id="voltar"
+                style="left:48%;top:8%;">
+
+                <span class="bubble">
+
+                    ← Voltar ao mapa
+
+                </span>
+
+            </button>
+
+
+
+            <!--=========================
+                PERSONAGEM
+            ==========================-->
+
+            <div class="character"
+
+                id="char"
+
+                style="left:48%;top:60%;">
+
+                <div class="bubble hint-bubble">
+
+                    Use as setas
+
                 </div>
+
+                <div class="sprite"></div>
+
             </div>
 
-            <!-- D-Pad -->
-            <div class="dpad">
-                <button data-dir="up">🡅</button>
-                <button data-dir="left">🡄</button>
-                <button data-dir="right">🡆</button>
-                <button data-dir="down">🡇</button>
+
+
+            <!--=========================
+                MINIMAPA
+            ==========================-->
+
+            <div class="panel minimap">
+
+                <div class="mini-inner">
+
+                    <div class="mini-dot"
+
+                        id="miniDot">
+
+                    </div>
+
+                </div>
+
             </div>
+
+
+
+            <!--=========================
+                D-PAD
+            ==========================-->
+
+            <div class="dpad">
+
+                <button data-dir="up">
+
+                    🡅
+
+                </button>
+
+                <button data-dir="left">
+
+                    🡄
+
+                </button>
+
+                <button data-dir="right">
+
+                    🡆
+
+                </button>
+
+                <button data-dir="down">
+
+                    🡇
+
+                </button>
+
+            </div>
+
         </div>
+
     </main>
 
-    <!-- Modal -->
-    <div class="modal" id="modal" hidden>
+
+
+    <!--=========================
+        MODAL
+    ==========================-->
+
+    <div class="modal"
+
+        id="modal"
+
+        hidden>
+
         <div class="panel modal-card">
+
             <div class="modal-head">
-                <h2 id="modalTitle"></h2>
-                <button id="modalClose">ESC ✕</button>
+
+                <h2 id="modalTitle">
+
+                </h2>
+
+                <button id="modalClose">
+
+                    ESC ✕
+
+                </button>
+
             </div>
-            <p id="modalBody"></p>
+
+            <div id="modalBody">
+
+            </div>
+
         </div>
+
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <div class="brand">
-                    <h3>Magali Barradas</h3>
-                </div>
-                <p>Designer Gráfico • Branding • UI/UX • HTML • CSS • JavaScript</p>
-                <p class="muted">Transformando ideias em experiências visuais.</p>
-                <div class="socials">
-                    <a class="panel" href="https://www.behance.net/magalibarradas1" target="_blank"
-                        aria-label="Behance">
-                        <i class="fa-brands fa-behance"></i>
-                    </a>
+    <script src="../Javascript/branding.js"></script>
 
-                    <a class="panel" href="https://www.instagram.com/rotulocriativo" target="_blank"
-                        aria-label="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-
-                    <a class="panel" href="https://www.linkedin.com/in/magalibarradas/" target="_blank"
-                        aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-
-                    <a class="panel" href="https://github.com/https://github.com/MagaliBarradas" target="_blank" aria-label="GitHub">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                </div>
-            </div>
-            <div>
-                <div class="label">NAVEGAÇÃO</div>
-                <ul>
-                    <li>Sobre Mim</li>
-                    <li>Branding</li>
-                    <li>UI/UX - Design - Frontend</li>
-                    <li>Contacto</li>
-                </ul>
-            </div>
-            <div>
-                <div class="label">LINKS RÁPIDOS</div>
-                <ul>
-                    <li>
-                        <a href="https://www.behance.net/magalibarradas1" target="_blank">
-                            Behance
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://www.instagram.com/rotulocriativo" target="_blank">
-                            Instagram
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://www.linkedin.com/in/magalibarradas/" target="_blank">
-                            LinkedIn
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="../MagaliBarradasPorfolio/download/CV MAGALI BARRADAS DESIGN FRONTEND.pdf" download>
-                            Download CV
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <div class="label">CONTACTO</div>
-                <p>✉ magalicsbarradas@gmail.com</p>
-                <p>📍Porto - Portugal</p>
-                <a href="../MagaliBarradasPorfolio/download/CV MAGALI BARRADAS DESIGN FRONTEND.pdf" class="panel cv"
-                    download>
-                    ⬇ DOWNLOAD CV
-                </a>
-            </div>
-        </div>
-        <div class="copyright">© 2026 Magali Barradas — Rótulo Criativo • Todos os direitos reservados</div>
-    </footer>
-
-    <script src="./Javascript/script.js" defer></script>
 </body>
 
 </html>

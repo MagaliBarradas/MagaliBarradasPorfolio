@@ -15,12 +15,92 @@
 
 </head>
 
+<div id="aboutContent" hidden>
+
+    <div class="about-card">
+
+        <div class="about-header">
+            <h2>Magali Barradas</h2>
+
+            <p class="job">
+                Designer Gráfico • Branding • UI/UX • Frontend
+            </p>
+
+            <p class="desc">
+                Transformo ideias em experiências visuais memoráveis,
+                criando marcas e interfaces modernas com foco na experiência do utilizador.
+            </p>
+        </div>
+
+        <div class="about-columns">
+
+            <div class="about-box">
+
+                <h3>⭐ Skills</h3>
+
+                <ul>
+                    <li>🎨 Branding</li>
+                    <li>💻 UI/UX Design</li>
+                    <li>⚡ HTML & CSS</li>
+                    <li>🟨 JavaScript</li>
+                    <li>🎯 Figma</li>
+                    <li>🖌 Illustrator</li>
+                </ul>
+
+            </div>
+
+            <div class="about-box">
+
+                <h3>📍 Contacto</h3>
+
+                <p>✉ magalicsbarradas@gmail.com</p>
+
+                <p>📍 Porto • Portugal</p>
+
+                <a href="../MagaliBarradasPorfolio/download/CV MAGALI BARRADAS DESIGN FRONTEND.pdf" class="panel cv"
+                    download>
+
+                    ⬇ DOWNLOAD CV
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="socials">
+
+            <a class="panel" href="https://www.behance.net/magalibarradas1" target="_blank">
+                <i class="fa-brands fa-behance"></i>
+            </a>
+
+            <a class="panel" href="https://www.instagram.com/rotulocriativo" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a class="panel" href="https://www.linkedin.com/in/magalibarradas/" target="_blank">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a class="panel" href="https://github.com/MagaliBarradas" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <p class="about-quote">
+                "Cada projeto é uma nova fase. O objetivo é sempre criar uma experiência memorável."
+            </p>
+        </div>
+
+    </div>
+    </footer>
+</div>
+
 <body>
 
     <!-- Marquee -->
     <div class="marquee">
         <div class="marquee-track" id="marquee"></div>
     </div>
+    
     <!-- Mapa -->
     <main class="stage">
         <div class="map" id="map">
@@ -56,9 +136,10 @@
             <button class="coin" data-id="ux" style="left:71%;top:69%"><span class="bubble">UI/UX Frontend
                 </span></button>
             <button class="coin" data-id="branding" style="left:29%;top:25%"><span
-                    class="bubble">Branding</span></button>
-            <button class="coin" data-id="contacto" style="left:74%;top:20%"><span
-                    class="bubble">Contacto</span></button>
+                    class="bubble"><a href="./paginas/branding.html" style="color: inherit;text-decoration: none">Branding</a></span></button>
+            <button class="coin" data-id="contacto" style="left:74%;top:20%"><span class="bubble"><a
+                        href="./paginas/contacto.html" style="color: inherit;text-decoration: none
+                ">Contacto</a></span></button>
 
             <!-- Personagem -->
             <div class="character" id="char" style="left:45%;top:72%">
@@ -90,90 +171,69 @@
                 <h2 id="modalTitle"></h2>
                 <button id="modalClose">ESC ✕</button>
             </div>
-            <p id="modalBody"></p>
+
+            <div id="modalBody"></div>
+
         </div>
     </div>
+    <!-- Aqui o JavaScript continua a colocar o texto das outras moedas -->
 
-    <!-- Footer -->
-    <footer class="footer">
+    <div id="aboutContent" hidden>
+
         <div class="footer-grid">
+
             <div class="footer-brand">
                 <div class="brand">
                     <h3>Magali Barradas</h3>
                 </div>
+
                 <p>Designer Gráfico • Branding • UI/UX • HTML • CSS • JavaScript</p>
-                <p class="muted">Transformando ideias em experiências visuais.</p>
+
+                <p class="muted">
+                    Transformando ideias em experiências visuais.
+                </p>
+
                 <div class="socials">
-                    <a class="panel" href="https://www.behance.net/magalibarradas1" target="_blank"
-                        aria-label="Behance">
-                        <i class="fa-brands fa-behance"></i>
-                    </a>
-
-                    <a class="panel" href="https://www.instagram.com/rotulocriativo" target="_blank"
-                        aria-label="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-
-                    <a class="panel" href="https://www.linkedin.com/in/magalibarradas/" target="_blank"
-                        aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-
-                    <a class="panel" href="https://github.com/https://github.com/MagaliBarradas" target="_blank"
-                        aria-label="GitHub">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
+                    <!-- cola aqui todos os teus ícones -->
                 </div>
+
             </div>
+
             <div>
                 <div class="label">NAVEGAÇÃO</div>
+
                 <ul class="footer-nav">
-                    <li><a href="./paginas/aboutme.html">Sobre Mim</a></li>
-                    <li><a href="./paginas/Branding.html">Branding</a></li>
-                    <li><a href="./paginas/Frontend.html">UI/UX • Design • Frontend</a></li>
-                    <li><a href="./paginas/contacto.html">Contacto</a></li>
+                    ...
                 </ul>
             </div>
+
             <div>
                 <div class="label">LINKS RÁPIDOS</div>
+
                 <ul>
-                    <li>
-                        <a href="https://www.behance.net/magalibarradas1" target="_blank">
-                            Behance
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://www.instagram.com/rotulocriativo" target="_blank">
-                            Instagram
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="https://www.linkedin.com/in/magalibarradas/" target="_blank">
-                            LinkedIn
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="../MagaliBarradasPorfolio/download/CV MAGALI BARRADAS DESIGN FRONTEND.pdf" download>
-                            Download CV
-                        </a>
-                    </li>
+                    ...
                 </ul>
             </div>
+
             <div>
                 <div class="label">CONTACTO</div>
+
                 <p>✉ magalicsbarradas@gmail.com</p>
-                <p>📍Porto - Portugal</p>
-                <a href="../MagaliBarradasPorfolio/download/CV MAGALI BARRADAS DESIGN FRONTEND.pdf" class="panel cv"
-                    download>
-                    ⬇ DOWNLOAD CV
+                <p>📍 Porto - Portugal</p>
+
+                <a class="panel cv" href="...">
+                    DOWNLOAD CV
                 </a>
             </div>
+
         </div>
-        <div class="copyright">© 2026 Magali Barradas — Rótulo Criativo • Todos os direitos reservados</div>
-    </footer>
+
+    </div>
+
+    </div>
+
+    </div>
+    </div>
 
     <script src="./Javascript/script.js" defer></script>
 </body>

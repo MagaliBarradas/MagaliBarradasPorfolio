@@ -1,0 +1,362 @@
+/* CSS DO CONTACTO  */
+
+
+/* ===========================
+   CONTACTO
+=========================== */
+
+body {
+    background: #0f1b3d;
+    overflow-x: hidden;
+}
+
+.contact-page {
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(rgba(7, 15, 35, .55), rgba(7, 15, 35, .8)),
+        url("../imagens/castelo-contacto.png") center/cover no-repeat;
+
+    padding: 80px 20px;
+
+}
+
+/* ---------- HERO ---------- */
+
+.contact-header {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    text-align: center;
+
+    padding-bottom: 60px;
+
+}
+
+.contact-header h1 {
+
+    font-family: "Press Start 2P";
+
+    font-size: 30px;
+
+    color: var(--accent);
+
+    margin-bottom: 30px;
+
+}
+
+.contact-header p {
+
+    font-size: 28px;
+
+    line-height: 1.6;
+
+    color: white;
+
+}
+
+/* ---------- PERSONAGEM ---------- */
+
+.hero-character {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 70px;
+
+    position: relative;
+
+}
+
+.player {
+
+    width: 180px;
+
+    height: 180px;
+
+    background: url("../imagens/personagem.png") center/contain no-repeat;
+
+    animation: floatPlayer 2s ease-in-out infinite;
+
+    z-index: 2;
+
+}
+
+.contact-page {
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(rgba(8, 12, 30, .30), rgba(8, 12, 30, .80)),
+        url("../imagens/mapacontacto.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@keyframes floatPlayer {
+
+    0%,
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-10px);
+
+    }
+
+}
+
+/* ---------- CARDS ---------- */
+
+.contact-cards {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    margin-bottom: 70px;
+
+}
+
+.contact-card {
+
+    text-decoration: none;
+
+    color: white;
+
+    background: var(--panel);
+
+    border: 2px solid var(--border);
+
+    border-radius: 14px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    transition: .25s;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .4);
+
+}
+
+.contact-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: var(--accent);
+
+}
+
+.contact-card i {
+
+    font-size: 42px;
+
+    color: var(--accent);
+
+    margin-bottom: 20px;
+
+}
+
+.contact-card h2 {
+
+    font-family: "Press Start 2P";
+
+    font-size: 12px;
+
+    margin-bottom: 18px;
+
+}
+
+.contact-card p {
+
+    font-size: 24px;
+
+}
+
+/* ---------- FORM ---------- */
+
+.form-area {
+
+    max-width: 900px;
+
+    margin: auto;
+
+}
+
+.form-panel {
+
+    padding: 45px;
+
+}
+
+.form-panel h2 {
+
+    text-align: center;
+
+    color: var(--accent);
+
+    margin-bottom: 35px;
+
+    font-family: "Press Start 2P";
+
+    font-size: 16px;
+
+}
+
+form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+}
+
+label {
+
+    font-family: "Press Start 2P";
+
+    font-size: 10px;
+
+    color: var(--accent);
+
+}
+
+input,
+textarea {
+
+    background: #111b37;
+
+    border: 2px solid var(--border);
+
+    color: white;
+
+    padding: 16px;
+
+    font-family: "VT323";
+
+    font-size: 26px;
+
+    border-radius: 10px;
+
+    outline: none;
+
+}
+
+input:focus,
+textarea:focus {
+
+    border-color: var(--accent);
+
+}
+
+button {
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--accent);
+
+    font-family: "Press Start 2P";
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+button:hover {
+
+    transform: translateY(-4px);
+
+}
+
+/* ---------- BOTÃO ---------- */
+
+.back-home {
+
+    text-align: center;
+
+    margin-top: 70px;
+
+}
+
+.back-home a {
+
+    display: inline-block;
+
+    padding: 16px 28px;
+
+    color: white;
+
+    text-decoration: none;
+
+}
+
+/* ---------- RESPONSIVO ---------- */
+
+@media(max-width:768px) {
+
+    .contact-header h1 {
+
+        font-size: 18px;
+
+    }
+
+    .contact-header p {
+
+        font-size: 22px;
+
+    }
+
+    .player {
+
+        width: 120px;
+
+        height: 120px;
+
+    }
+
+    .castle {
+
+        width: 280px;
+
+    }
+
+    .form-panel {
+
+        padding: 25px;
+
+    }
+
+}
+
+
+
+

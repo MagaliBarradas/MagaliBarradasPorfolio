@@ -1,0 +1,518 @@
+/* BRANDING */
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#10162f;
+    color:#fff;
+    font-family: "VT323", monospace;
+    min-height:100vh;
+
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.topo{
+
+    width:100%;
+    padding:18px 60px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:#121938;
+    border-bottom:3px solid #f4c542;
+
+}
+
+.logo{
+
+    font-family:"Press Start 2P";
+    font-size:14px;
+    color:#f4c542;
+
+}
+
+nav{
+
+    display:flex;
+    gap:25px;
+
+}
+
+nav a{
+
+    color:white;
+    text-decoration:none;
+    font-size:28px;
+
+    transition:.25s;
+
+}
+
+nav a:hover{
+
+    color:#FFD84A;
+
+}
+
+nav .ativo{
+
+    color:#FFD84A;
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+    max-width:1300px;
+    margin:40px auto 20px;
+
+    padding:40px;
+
+    border:3px solid #324d93;
+    border-radius:18px;
+
+    background:
+
+    linear-gradient(
+        rgba(10,18,45,.82),
+        rgba(10,18,45,.82)
+    ),
+
+    url("../img/banner-branding.png");
+
+    background-size:cover;
+    background-position:center;
+
+}
+
+.hero h1{
+
+    font-family:"Press Start 2P";
+    color:#FFD84A;
+
+    font-size:52px;
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    font-size:34px;
+    color:#ddd;
+
+}
+
+/* ===========================
+   FILTROS
+=========================== */
+
+.filtros{
+
+    max-width:1300px;
+    margin:auto;
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+
+    margin-bottom:35px;
+
+}
+
+.filtros button{
+
+    background:#1d2550;
+
+    color:white;
+
+    border:2px solid #394f90;
+
+    border-radius:10px;
+
+    padding:14px 25px;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.filtros button:hover{
+
+    transform:translateY(-3px);
+
+    background:#29346d;
+
+}
+
+.filtros button.active{
+
+    background:#FFD84A;
+
+    color:#10162f;
+
+    border-color:#FFD84A;
+
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.portfolio-grid{
+
+    width:1300px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+
+    gap:30px;
+
+    padding-bottom:60px;
+
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card{
+
+    background:#182248;
+
+    border:2px solid #39579c;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+    position:relative;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#FFD84A;
+
+    box-shadow:
+
+    0 0 25px rgba(255,216,74,.35);
+
+}
+
+.card img{
+
+    width:100%;
+    height:240px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+/* ===========================
+   TEXTO
+=========================== */
+
+.card-info{
+
+    padding:20px;
+
+}
+
+.card-info h3{
+
+    color:#FFD84A;
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+}
+
+.card-info p{
+
+    font-size:24px;
+
+    color:#ddd;
+
+}
+
+.card-info span{
+
+    display:inline-block;
+
+    margin-top:12px;
+
+    color:#8fb9ff;
+
+}
+
+/* ===========================
+   BOTÃO PDF
+=========================== */
+
+.ver-projeto{
+
+    position:absolute;
+
+    right:15px;
+
+    bottom:18px;
+
+    width:45px;
+    height:45px;
+
+    border-radius:10px;
+
+    background:#27376f;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:24px;
+
+    transition:.25s;
+
+}
+
+.card:hover .ver-projeto{
+
+    background:#FFD84A;
+
+    color:#10162f;
+
+}
+
+/* ===========================
+   MODAL
+=========================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+.modal.show{
+
+    display:flex;
+
+}
+
+.modal-content{
+
+    width:900px;
+
+    background:#151d3d;
+
+    border:3px solid #FFD84A;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.modal img{
+
+    width:100%;
+
+}
+
+.modal-info{
+
+    padding:30px;
+
+}
+
+.modal-info h2{
+
+    color:#FFD84A;
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+}
+
+.modal-info p{
+
+    font-size:28px;
+
+    margin-bottom:25px;
+
+}
+
+#pdfButton{
+
+    display:inline-block;
+
+    padding:15px 25px;
+
+    background:#FFD84A;
+
+    color:#111;
+
+    text-decoration:none;
+
+    border-radius:10px;
+
+    font-size:24px;
+
+    transition:.25s;
+
+}
+
+#pdfButton:hover{
+
+    transform:scale(1.05);
+
+}
+
+.close{
+
+    position:absolute;
+
+    right:25px;
+
+    top:20px;
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#FFD84A;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    margin-top:60px;
+
+    padding:30px;
+
+    text-align:center;
+
+    border-top:3px solid #2f4d94;
+
+    font-size:28px;
+
+}
+
+.social{
+
+    margin-top:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+}
+
+.social a{
+
+    color:#FFD84A;
+
+    text-decoration:none;
+
+    transition:.25s;
+
+}
+
+.social a:hover{
+
+    color:white;
+
+}
+
+.marquee{
+    width:100%;
+    overflow:hidden;
+    background:#08153f;
+    border-top:2px solid #f5c542;
+    border-bottom:2px solid #f5c542;
+    white-space:nowrap;
+}
+
+.marquee-content{
+    display:inline-block;
+    padding:10px 0;
+    animation:marquee 25s linear infinite;
+    font-family:'Press Start 2P';
+    font-size:12px;
+    color:#ffd84d;
+}
+
+@keyframes marquee{
+
+0%{
+transform:translateX(0%);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
+}
