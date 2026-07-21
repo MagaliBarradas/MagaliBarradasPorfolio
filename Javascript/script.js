@@ -147,6 +147,10 @@ document.querySelectorAll('[data-action="interact"]').forEach(button => {
   button.addEventListener("click", interactWithNearestSection);
 });
 
+document.querySelector(".mobile-gamepad")?.addEventListener("dblclick", event => {
+  event.preventDefault();
+});
+
 document.querySelectorAll(".coin").forEach(coin => {
   coin.addEventListener("click", () => openSection(coin.dataset.id));
 });

@@ -849,6 +849,9 @@ h3,
     box-shadow: inset 0 4px 0 #fff, inset 0 -6px 0 #8b8b90, 0 8px 0 #070d24, 0 14px 24px rgba(0, 0, 0, .45);
     z-index: 40;
     user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .gamepad-brand {
@@ -883,6 +886,7 @@ h3,
     font-size: 11px;
     line-height: 36px;
     box-shadow: inset 2px 2px 0 #55565b, inset -3px -3px 0 #111;
+    touch-action: none;
   }
 
   .gamepad-up { top: 0; left: 34px; }
@@ -942,6 +946,8 @@ h3,
     font-size: 10px;
     box-shadow: inset 2px 2px 0 #a795ff, 0 3px 0 #4a369b;
     transform: rotate(25deg);
+    touch-action: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .gamepad-b { left: 10px; bottom: 12px; }
