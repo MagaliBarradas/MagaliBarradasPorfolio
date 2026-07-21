@@ -818,3 +818,269 @@ h3,
   .greeting h1 { font-size: 14px; }
   .controls { width: 160px; }
 }
+
+/* Comando retro da Home: aparece apenas no telemóvel. */
+.mobile-gamepad {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .controls,
+  .dpad {
+    display: none !important;
+  }
+
+  .map {
+    touch-action: manipulation;
+  }
+
+  .mobile-gamepad {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr .65fr 1fr;
+    align-items: center;
+    width: min(88vw, 390px);
+    height: 176px;
+    margin: 22px auto 32px;
+    padding: 35px 25px 20px;
+    background: linear-gradient(150deg, #f4f4f4 0%, #c9c9cd 65%, #ababaf 100%);
+    border: 4px solid #68686d;
+    border-radius: 45% 45% 38% 38% / 35% 35% 52% 52%;
+    box-shadow: inset 0 4px 0 #fff, inset 0 -6px 0 #8b8b90, 0 8px 0 #070d24, 0 14px 24px rgba(0, 0, 0, .45);
+    z-index: 40;
+    user-select: none;
+  }
+
+  .gamepad-brand {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #55555d;
+    font-family: "Press Start 2P", monospace;
+    font-size: 8px;
+    white-space: nowrap;
+    text-shadow: 1px 1px 0 #fff;
+  }
+
+  .gamepad-dpad {
+    position: relative;
+    width: 104px;
+    height: 104px;
+  }
+
+  .gamepad-dpad button,
+  .gamepad-center-dot {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 4px;
+    background: #292a2e;
+    color: #0b0b0c;
+    font-size: 11px;
+    line-height: 36px;
+    box-shadow: inset 2px 2px 0 #55565b, inset -3px -3px 0 #111;
+  }
+
+  .gamepad-up { top: 0; left: 34px; }
+  .gamepad-left { top: 34px; left: 0; }
+  .gamepad-center-dot { top: 34px; left: 34px; }
+  .gamepad-right { top: 34px; left: 68px; }
+  .gamepad-down { top: 68px; left: 34px; }
+
+  .gamepad-dpad button:active,
+  .gamepad-actions button:active {
+    transform: translateY(2px);
+    filter: brightness(.8);
+  }
+
+  .gamepad-middle {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding-top: 45px;
+    color: #66666d;
+    font-family: "Press Start 2P", monospace;
+    font-size: 5px;
+  }
+
+  .gamepad-middle span::before {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 8px;
+    margin: 0 auto 6px;
+    background: #45464b;
+    border-radius: 8px;
+    transform: rotate(-15deg);
+    box-shadow: inset 0 2px 0 #222;
+  }
+
+  .gamepad-actions {
+    position: relative;
+    width: 112px;
+    height: 92px;
+    border-radius: 50%;
+    background: #b8b8bd;
+    transform: rotate(-25deg);
+    box-shadow: inset 0 3px 0 #8a8a90, 0 2px 0 #fff;
+  }
+
+  .gamepad-actions button {
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    padding: 0;
+    border: 3px solid #8d8d93;
+    border-radius: 50%;
+    background: #7657e8;
+    color: white;
+    font-family: "Press Start 2P", monospace;
+    font-size: 10px;
+    box-shadow: inset 2px 2px 0 #a795ff, 0 3px 0 #4a369b;
+    transform: rotate(25deg);
+  }
+
+  .gamepad-b { left: 10px; bottom: 12px; }
+  .gamepad-a { right: 10px; top: 10px; }
+}
+
+@media (max-width: 400px) {
+  .mobile-gamepad {
+    transform: scale(.9);
+    transform-origin: top center;
+    margin-bottom: 10px;
+  }
+}
+
+/* Formato inspirado nos comandos clássicos de 16 bits. */
+@media (max-width: 768px) {
+  .mobile-gamepad {
+    grid-template-columns: 118px 1fr 128px;
+    width: min(94vw, 430px);
+    height: 166px;
+    padding: 30px 22px 17px;
+    border-width: 3px;
+    border-radius: 82px 82px 70px 70px / 76px 76px 62px 62px;
+    background: linear-gradient(160deg, #fafafa 0%, #e3e3e3 48%, #b9b9bd 100%);
+    box-shadow: inset 0 5px 0 #fff, inset 0 -6px 0 #909095, 0 6px 0 #56575b, 0 12px 22px rgba(0, 0, 0, .5);
+  }
+
+  .gamepad-brand {
+    top: 13px;
+    font-size: 7px;
+    color: #686970;
+  }
+
+  .gamepad-dpad {
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #eeeeef, #c7c7ca);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .22), 0 2px 0 #fff;
+  }
+
+  .gamepad-dpad button,
+  .gamepad-center-dot {
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    background: #333438;
+    color: #161719;
+  }
+
+  .gamepad-up { top: 4px; left: 35px; }
+  .gamepad-left { top: 35px; left: 4px; }
+  .gamepad-center-dot { top: 35px; left: 35px; }
+  .gamepad-right { top: 35px; left: 66px; }
+  .gamepad-down { top: 66px; left: 35px; }
+
+  .gamepad-middle {
+    align-self: end;
+    gap: 10px;
+    padding: 0 0 17px;
+    font-size: 4px;
+  }
+
+  .gamepad-middle span::before {
+    width: 28px;
+    height: 9px;
+    margin-bottom: 5px;
+    background: #55575a;
+    transform: rotate(-38deg);
+  }
+
+  .gamepad-actions {
+    width: 126px;
+    height: 116px;
+    border: 2px solid #4f5054;
+    border-radius: 50%;
+    background: #858a8d;
+    transform: none;
+    box-shadow: inset 0 3px 0 #aeb2b4, 0 2px 0 #fff;
+  }
+
+  .gamepad-actions::before,
+  .gamepad-actions::after {
+    content: "";
+    position: absolute;
+    left: 21px;
+    width: 84px;
+    height: 37px;
+    border-radius: 20px;
+    background: #e5e5e6;
+    transform: rotate(-42deg);
+    box-shadow: inset 0 2px 2px rgba(0, 0, 0, .18);
+  }
+
+  .gamepad-actions::before { top: 20px; }
+  .gamepad-actions::after { bottom: 20px; }
+
+  .gamepad-actions button {
+    z-index: 2;
+    width: 35px;
+    height: 35px;
+    border-width: 2px;
+    font-size: 7px;
+    transform: none;
+  }
+
+  .gamepad-x {
+    top: 7px;
+    left: 47px;
+    background: #0878e8 !important;
+    box-shadow: inset 2px 2px 0 #6eb9ff, 0 3px 0 #064b91 !important;
+  }
+
+  .gamepad-y {
+    top: 38px;
+    left: 12px;
+    background: #08d5ae !important;
+    box-shadow: inset 2px 2px 0 #79ffe4, 0 3px 0 #087762 !important;
+  }
+
+  .gamepad-a {
+    top: 38px;
+    right: 12px;
+    background: #fb4356 !important;
+    box-shadow: inset 2px 2px 0 #ff9aa4, 0 3px 0 #9a1d2a !important;
+  }
+
+  .gamepad-b {
+    left: 47px;
+    bottom: 7px;
+    background: #ffb148 !important;
+    box-shadow: inset 2px 2px 0 #ffd69d, 0 3px 0 #a9650b !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .mobile-gamepad {
+    transform: scale(.84);
+    margin-top: 14px;
+    margin-bottom: -4px;
+  }
+}

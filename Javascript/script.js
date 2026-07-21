@@ -12,7 +12,7 @@ if (marquee) marquee.textContent = "MEU PORTFÓLIO • ".repeat(40);
 const SECTIONS = {
   sobre: { title: "Sobre Mim", body: "" },
   ux: { title: "UI/UX Frontend", url: "./paginas/frontend.html" },
-  branding: { title: "Branding", url: "./paginas/branding.html" },
+  branding: { title: "Branding", url: "./paginas/Branding.html" },
   contacto: { title: "Contacto", url: "./paginas/contacto.html" },
   servicos: { title: "Serviços", url: "./paginas/servicos.html" }
 };
@@ -81,6 +81,31 @@ function closeModal() {
   if (modal) modal.hidden = true;
 }
 
+function interactWithNearestSection() {
+  const coins = [...document.querySelectorAll(".coin")].map(getCoinPosition);
+  let nearest = null;
+  let nearestDistance = Infinity;
+
+  for (const coin of coins) {
+    const distance = Math.hypot(coin.x - pos.x, coin.y - pos.y);
+    if (distance < nearestDistance) {
+      nearest = coin;
+      nearestDistance = distance;
+    }
+  }
+
+  if (nearest && nearestDistance < 15) {
+    openSection(nearest.id);
+    return;
+  }
+
+  if (hintBubble) {
+    hintBubble.innerHTML = "Aproxima-te de<br>uma caixa ?";
+    hintBubble.style.display = "block";
+    window.setTimeout(() => { hintBubble.style.display = "none"; }, 1600);
+  }
+}
+
 document.getElementById("modalClose")?.addEventListener("click", closeModal);
 
 modal?.addEventListener("click", event => {
@@ -105,24 +130,10 @@ document.addEventListener("keydown", event => {
   else if (["arrowdown", "s"].includes(key)) move(0, 2);
   else if (["arrowleft", "a"].includes(key)) move(-2, 0);
   else if (["arrowright", "d"].includes(key)) move(2, 0);
-  else if (key === "enter") {
-    const coins = [...document.querySelectorAll(".coin")].map(getCoinPosition);
-    let nearest = null;
-    let nearestDistance = Infinity;
-
-    for (const coin of coins) {
-      const distance = Math.hypot(coin.x - pos.x, coin.y - pos.y);
-      if (distance < nearestDistance) {
-        nearest = coin;
-        nearestDistance = distance;
-      }
-    }
-
-    if (nearest && nearestDistance < 15) openSection(nearest.id);
-  }
+  else if (key === "enter") interactWithNearestSection();
 });
 
-document.querySelectorAll(".dpad button").forEach(button => {
+document.querySelectorAll(".mobile-gamepad [data-dir]").forEach(button => {
   button.addEventListener("click", () => {
     const direction = button.dataset.dir;
     if (direction === "up") move(0, -4);
@@ -130,6 +141,10 @@ document.querySelectorAll(".dpad button").forEach(button => {
     if (direction === "left") move(-4, 0);
     if (direction === "right") move(4, 0);
   });
+});
+
+document.querySelectorAll('[data-action="interact"]').forEach(button => {
+  button.addEventListener("click", interactWithNearestSection);
 });
 
 document.querySelectorAll(".coin").forEach(coin => {
@@ -146,35 +161,4 @@ if (localStorage.getItem("theme") === "dark") {
   document.body.classList.add("dark-mode");
 }
 
-const isMobile = "ontouchstart" in window || navigator.maxTouchPoints > 0;
-
-function enableTouchMovement() {
-  if (!isMobile || !map) return;
-  let dragging = false;
-
-  function updateFromTouch(touch) {
-    const rect = map.getBoundingClientRect();
-    const x = Math.max(0, Math.min(rect.width, touch.clientX - rect.left));
-    const y = Math.max(0, Math.min(rect.height, touch.clientY - rect.top));
-    pos.x = (x / rect.width) * 100;
-    pos.y = (y / rect.height) * 100;
-    markMoved();
-    render();
-  }
-
-  map.addEventListener("touchstart", event => {
-    dragging = true;
-    updateFromTouch(event.touches[0]);
-  }, { passive: true });
-
-  map.addEventListener("touchmove", event => {
-    if (!dragging) return;
-    event.preventDefault();
-    updateFromTouch(event.touches[0]);
-  }, { passive: false });
-
-  map.addEventListener("touchend", () => { dragging = false; });
-}
-
-enableTouchMovement();
 render();
