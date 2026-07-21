@@ -610,6 +610,11 @@ h3,
         top: 68% !important;
         left: 73% !important;
     }
+
+    .coin[data-id="servicos"] {
+        top: 47% !important;
+        left: 50% !important;
+    }
     .sprite { width: 72px; height: 72px; }
 
     .modal-card { width: 94vw; padding: 18px; }
@@ -641,7 +646,6 @@ h3,
         transform: translateY(-50%);
     }
 }
-
 
 /* RESPONSIVO */
 
@@ -759,4 +763,58 @@ nav ul {
   .hide-mobile {
     display: none !important;
   }
+}
+
+/* Deve permanecer no fim: evita que o bloco responsivo genérico altere a Home. */
+body {
+  font-family: "VT323", monospace;
+  line-height: normal;
+}
+
+h1,
+h2,
+h3,
+.label,
+.key,
+.btn-icon,
+.coin .bubble,
+.hint-bubble,
+.dpad button,
+.cv,
+.modal-head button,
+.socials a {
+  font-family: "Press Start 2P", monospace;
+}
+
+@media (max-width: 768px) {
+  .stage {
+    width: 100%;
+    margin: 14px auto 24px;
+    padding: 0 10px;
+  }
+
+  .greeting h1 { font-size: 16px; }
+  .greeting p { font-size: 14px; }
+
+  .dpad {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    z-index: 30;
+    grid-template: repeat(3, 38px) / repeat(3, 38px);
+    gap: 4px;
+  }
+
+  .dpad button {
+    width: 38px;
+    height: 38px;
+    font-size: 15px;
+  }
+
+  .controls { max-width: calc(100% - 150px); }
+}
+
+@media (max-width: 380px) {
+  .greeting h1 { font-size: 14px; }
+  .controls { width: 160px; }
 }

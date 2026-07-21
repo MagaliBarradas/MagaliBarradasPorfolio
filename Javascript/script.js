@@ -13,7 +13,8 @@ const SECTIONS = {
   sobre: { title: "Sobre Mim", body: "" },
   ux: { title: "UI/UX Frontend", url: "./paginas/frontend.html" },
   branding: { title: "Branding", url: "./paginas/branding.html" },
-  contacto: { title: "Contacto", url: "./paginas/contacto.html" }
+  contacto: { title: "Contacto", url: "./paginas/contacto.html" },
+  servicos: { title: "Serviços", url: "./paginas/servicos.html" }
 };
 
 let pos = { x: 45, y: 72 };

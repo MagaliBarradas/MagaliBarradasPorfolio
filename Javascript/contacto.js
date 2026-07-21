@@ -1,46 +1,68 @@
-// Inicializa o EmailJS
+const marquee = document.getElementById("marquee");
+const form = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+const themeButton = document.getElementById("themeBtn");
+
+if (marquee) {
+    marquee.textContent = " CONTACT WORLD  ★  NEW MISSION  ★ ".repeat(20);
+}
+
 emailjs.init({
     publicKey: "kVULP95u2f3tgwk2i"
 });
 
-const form = document.getElementById("contactForm");
+function updateThemeButton(isDark) {
+    if (!themeButton) return;
 
-form.addEventListener("submit", function (e) {
+    themeButton.innerHTML = isDark
+        ? '<i class="fa-solid fa-sun" aria-hidden="true"></i>'
+        : '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
 
-    e.preventDefault();
+    themeButton.setAttribute(
+        "aria-label",
+        isDark ? "Ativar tema claro" : "Ativar tema escuro"
+    );
+}
 
-    const button = form.querySelector("button");
+const savedTheme = localStorage.getItem("contact-theme");
+const isDarkOnLoad = savedTheme === "dark";
 
+document.body.classList.toggle("contact-dark", isDarkOnLoad);
+updateThemeButton(isDarkOnLoad);
+
+themeButton?.addEventListener("click", () => {
+    const isDark = document.body.classList.toggle("contact-dark");
+    localStorage.setItem("contact-theme", isDark ? "dark" : "light");
+    updateThemeButton(isDark);
+});
+
+form?.addEventListener("submit", async event => {
+    event.preventDefault();
+
+    const button = form.querySelector("button[type='submit']");
+    const originalButtonContent = button.innerHTML;
+
+    formStatus.textContent = "";
+    formStatus.className = "form-status";
     button.disabled = true;
-    button.innerHTML = "⏳ Enviando...";
+    button.innerHTML = '<i class="fa-solid fa-hourglass-half" aria-hidden="true"></i> ENVIANDO...';
 
-    emailjs.sendForm(
-        "service_a99ywux",
-        "template_nl67j9f",
-        form
-    )
+    try {
+        await emailjs.sendForm(
+            "service_a99ywux",
+            "template_nl67j9f",
+            form
+        );
 
-    .then(() => {
-
-        alert("🎉 Missão enviada com sucesso!\n\nObrigado pelo contacto. Responderei o mais breve possível.");
-
+        formStatus.textContent = "MISSÃO CONCLUÍDA! A mensagem foi enviada com sucesso.";
+        formStatus.classList.add("success");
         form.reset();
-
-    })
-
-    .catch((error) => {
-
-        console.error("Erro:", error);
-
-        alert("❌ Não foi possível enviar a mensagem.\nVerifica a consola (F12) para mais detalhes.");
-
-    })
-
-    .finally(() => {
-
+    } catch (error) {
+        console.error("Erro ao enviar a mensagem:", error);
+        formStatus.textContent = "A missão falhou. Tenta novamente ou envia um e-mail direto.";
+        formStatus.classList.add("error");
+    } finally {
         button.disabled = false;
-        button.innerHTML = "🚀 ENVIAR MISSÃO";
-
-    });
-
+        button.innerHTML = originalButtonContent;
+    }
 });

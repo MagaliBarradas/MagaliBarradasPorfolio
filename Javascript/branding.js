@@ -40,7 +40,7 @@ const modalClose = document.getElementById("modalClose");
 const themeButton = document.getElementById("themeBtn");
 let lastFocusedCard = null;
 
-marquee.textContent = "BRANDING WORLD  ★  SELECT A PROJECT  ★  ".repeat(18);
+marquee.textContent = " lOGOFOLIO • BRANDING • IDENTIDADE VISUAL •  ".repeat(18);
 
 function openProject(id, card) {
   const project = projects[id];

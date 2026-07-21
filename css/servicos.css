@@ -1,0 +1,1180 @@
+:root {
+    --ocean-deep: #031a43;
+    --ocean-mid: #064f8f;
+    --ocean-light: #11a8d8;
+    --ocean-foam: #bdf7ff;
+    --ocean-accent: #ffe05d;
+    --ocean-coral: #ff6f69;
+    --ocean-panel: rgba(3, 28, 71, .91);
+    --ocean-border: #5de5ff;
+    --ocean-text: #f5fdff;
+}
+
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+    background: var(--ocean-deep);
+    color: var(--ocean-text);
+}
+
+.ocean-world {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 34px 22px 145px;
+    background-color: #3f38ea;
+    background-image: linear-gradient(rgba(24, 19, 119, .08), rgba(24, 19, 119, .08));
+}
+
+.ocean-world::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 22px;
+    background:
+        linear-gradient(135deg, transparent 25%, #f2f6ff 26% 46%, transparent 47%) 0 0 / 24px 22px repeat-x,
+        linear-gradient(225deg, transparent 25%, #f2f6ff 26% 46%, transparent 47%) 12px 0 / 24px 22px repeat-x;
+    opacity: .88;
+}
+
+.water-light {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .1;
+    background: repeating-linear-gradient(105deg, transparent 0 94px, rgba(255,255,255,.15) 96px 108px, transparent 110px 200px);
+    transform: skewX(-9deg);
+    animation: waterShift 9s linear infinite alternate;
+}
+
+@keyframes waterShift {
+    to { transform: translateX(55px) skewX(-9deg); }
+}
+
+.ocean-header,
+.ocean-hud,
+.service-intro,
+.service-grid,
+.ocean-cta {
+    position: relative;
+    z-index: 2;
+    width: min(1180px, 100%);
+    margin-inline: auto;
+}
+
+.ocean-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 20px;
+}
+
+.ocean-title {
+    text-align: center;
+}
+
+.ocean-title > span,
+.mission-label,
+.card-level,
+.ocean-cta span {
+    color: var(--ocean-foam);
+    font-family: "Press Start 2P", monospace;
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.ocean-title h1 {
+    margin: 12px 0;
+    color: var(--ocean-accent);
+    font-family: "Press Start 2P", monospace;
+    font-size: clamp(27px, 5vw, 52px);
+    line-height: 1.25;
+    text-shadow: 5px 5px 0 #073060;
+}
+
+.ocean-title p {
+    margin: 0 auto;
+    max-width: 750px;
+    font-size: clamp(22px, 2.6vw, 30px);
+    text-shadow: 2px 2px 0 rgba(0,0,0,.55);
+}
+
+.ocean-button,
+.open-service {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 12px 15px;
+    border: 3px solid var(--ocean-border);
+    border-radius: 8px;
+    background: var(--ocean-panel);
+    box-shadow: 4px 5px 0 rgba(0,0,0,.42);
+    color: var(--ocean-text);
+    font-family: "Press Start 2P", monospace;
+    font-size: 8px;
+    line-height: 1.5;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ocean-button:hover,
+.ocean-button:focus-visible,
+.open-service:hover,
+.open-service:focus-visible {
+    border-color: var(--ocean-accent);
+    color: var(--ocean-accent);
+    transform: translateY(-3px);
+}
+
+.ocean-hud {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 22px;
+    padding: 13px 17px;
+    border: 3px solid var(--ocean-border);
+    border-radius: 7px;
+    background: var(--ocean-panel);
+    color: var(--ocean-accent);
+    font-family: "Press Start 2P", monospace;
+    font-size: clamp(7px, 1.3vw, 10px);
+    line-height: 1.5;
+}
+
+.service-intro {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    align-items: center;
+    gap: 24px;
+    margin-top: 28px;
+    padding: 22px 26px;
+    border: 3px solid rgba(189,247,255,.65);
+    border-radius: 14px;
+    background: rgba(3, 28, 71, .72);
+    backdrop-filter: blur(5px);
+}
+
+.diver-avatar {
+    width: 120px;
+    height: 120px;
+    display: grid;
+    place-items: center;
+    border: 3px solid var(--ocean-accent);
+    border-radius: 50%;
+    background: rgba(93,229,255,.16);
+    box-shadow: inset 0 0 0 7px rgba(255,255,255,.08), 5px 6px 0 rgba(0,0,0,.35);
+    overflow: hidden;
+}
+
+.diver-avatar img {
+    width: 92%;
+    height: 92%;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.service-intro h2,
+.ocean-cta h2 {
+    margin: 10px 0;
+    color: var(--ocean-accent);
+    font-family: "Press Start 2P", monospace;
+    font-size: clamp(15px, 2vw, 20px);
+    line-height: 1.5;
+}
+
+.service-intro p,
+.ocean-cta p {
+    margin: 0;
+    color: var(--ocean-foam);
+    font-size: 23px;
+    line-height: 1.35;
+}
+
+.service-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 34px;
+    min-height: 620px;
+    margin-top: 28px;
+    padding: 70px 20px 160px;
+    border: 4px solid rgba(255,255,255,.8);
+    box-shadow: inset 0 0 0 5px rgba(7,13,91,.45), 8px 9px 0 rgba(0,0,0,.35);
+    background: rgba(47, 42, 221, .76);
+    overflow: hidden;
+}
+
+.service-card {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 350px;
+    padding: 24px 20px 22px;
+    border: 4px solid #effcff;
+    border-radius: 4px;
+    background: #082b75;
+    box-shadow:
+        inset 0 0 0 5px #1768b4,
+        8px 8px 0 #02163f;
+    text-align: center;
+}
+
+.service-card::before {
+    content: "MISSION BLOCK";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: max-content;
+    padding: 7px 11px;
+    border: 3px solid #effcff;
+    background: #082b75;
+    color: var(--ocean-accent);
+    font-family: "Press Start 2P", monospace;
+    font-size: 7px;
+    transform: translateX(-50%);
+}
+
+.service-card::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: -10px;
+    bottom: -50px;
+    left: -10px;
+    height: 54px;
+    border: 4px solid #062149;
+    background:
+        linear-gradient(135deg, transparent 18%, rgba(255,255,255,.18) 19% 30%, transparent 31%) 0 0 / 38px 38px,
+        #168847;
+    box-shadow: inset 0 5px 0 #42df6c, 7px 8px 0 rgba(0,0,0,.38);
+}
+
+.graphic-card { margin-top: 18px; }
+.ux-card { margin-top: 118px; }
+.frontend-card { margin-top: 42px; }
+
+.service-icon {
+    display: grid;
+    place-items: center;
+    width: 96px;
+    height: 96px;
+    margin: 22px 0;
+    border: 3px solid var(--ocean-accent);
+    border-radius: 4px;
+    background: #0a4191;
+    color: var(--ocean-accent);
+    font-size: 38px;
+}
+
+.service-card h2 {
+    margin: 0 0 16px;
+    color: var(--ocean-accent);
+    font-family: "Press Start 2P", monospace;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.service-card p {
+    flex: 1;
+    margin: 0 0 22px;
+    color: var(--ocean-foam);
+    font-size: 22px;
+    line-height: 1.3;
+}
+
+.open-service {
+    width: 100%;
+    background: var(--ocean-accent);
+    border-color: #9b7200;
+    color: #052653;
+}
+
+.level-decoration {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    image-rendering: pixelated;
+}
+
+.fish {
+    width: 42px;
+    height: 28px;
+    border: 4px solid #792813;
+    border-radius: 55% 45% 45% 55%;
+    background: #ff8736;
+    animation: fishSwim 8s steps(8, end) infinite alternate;
+}
+
+.fish::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    box-shadow: inset -2px 0 0 #111;
+}
+
+.fish::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: -16px;
+    border-top: 10px solid transparent;
+    border-right: 16px solid #ff8736;
+    border-bottom: 10px solid transparent;
+}
+
+.fish-one { top: 25px; left: 8%; }
+.fish-two { right: 7%; bottom: 105px; animation-duration: 11s; transform: scaleX(-1); }
+
+@keyframes fishSwim {
+    to { translate: 90px 12px; }
+}
+
+.squid {
+    width: 42px;
+    height: 52px;
+    border: 4px solid #d5d4e5;
+    border-radius: 50% 50% 12px 12px;
+    background: #f6f4ee;
+    box-shadow: inset 0 -9px 0 #c8c6d7;
+    animation: squidFloat 3.2s steps(4, end) infinite alternate;
+}
+
+.squid::before {
+    content: "••";
+    position: absolute;
+    top: 13px;
+    left: 7px;
+    color: #111;
+    font-family: monospace;
+    font-size: 21px;
+    letter-spacing: 2px;
+}
+
+.squid::after {
+    content: "";
+    position: absolute;
+    right: 3px;
+    bottom: -16px;
+    left: 3px;
+    height: 17px;
+    background: repeating-linear-gradient(90deg, #f6f4ee 0 6px, transparent 6px 10px);
+}
+
+.squid-one { top: 28px; left: 48%; }
+.squid-two { right: 20%; bottom: 76px; animation-delay: -1.4s; }
+
+@keyframes squidFloat {
+    to { translate: 0 -18px; }
+}
+
+.reef {
+    bottom: 44px;
+    width: 18px;
+    height: 92px;
+    background: #ff5c90;
+    box-shadow: 18px 22px 0 #ff5c90, -10px 38px 0 #ff5c90;
+}
+
+.reef-one { left: 4%; }
+.reef-two { right: 6%; transform: scaleX(-1); }
+
+.open-service:hover,
+.open-service:focus-visible {
+    color: #052653;
+    filter: brightness(1.08);
+}
+
+.ocean-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-top: 34px;
+    padding: 25px 28px;
+    border: 3px solid var(--ocean-coral);
+    border-radius: 12px;
+    background: rgba(3,28,71,.86);
+    box-shadow: 7px 8px 0 rgba(0,0,0,.35);
+}
+
+.cta-button {
+    flex: 0 0 auto;
+    border-color: var(--ocean-accent);
+    color: var(--ocean-accent);
+}
+
+.bubble-pixel {
+    position: absolute;
+    z-index: 1;
+    bottom: -40px;
+    width: var(--bubble-size);
+    height: var(--bubble-size);
+    border: 2px solid rgba(189,247,255,.72);
+    border-radius: 50%;
+    animation: bubbleRise var(--bubble-speed) linear infinite;
+    animation-delay: var(--bubble-delay);
+}
+
+@keyframes bubbleRise {
+    to { transform: translateY(-115vh); opacity: 0; }
+}
+
+.sea-floor {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 105px;
+    border-top: 5px solid #73ed74;
+    background:
+        linear-gradient(135deg, transparent 20%, rgba(255,255,255,.17) 21% 38%, transparent 39%) 0 0 / 42px 42px,
+        repeating-linear-gradient(90deg, #08702f 0 40px, #0b8b38 40px 80px);
+}
+
+.coral,
+.plant {
+    position: absolute;
+    bottom: 75px;
+    width: 18px;
+    height: 65px;
+    border-radius: 18px 18px 0 0;
+}
+
+.coral { background: var(--ocean-coral); }
+.plant { background: #45d47a; }
+.coral-one { left: 8%; transform: rotate(-12deg); }
+.coral-two { right: 12%; height: 82px; transform: rotate(10deg); }
+.plant-one { left: 16%; height: 48px; }
+.plant-two { right: 22%; height: 58px; }
+
+.service-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: 18px;
+    background: rgba(1,10,30,.82);
+    backdrop-filter: blur(6px);
+}
+
+.service-modal[hidden] { display: none; }
+
+.service-modal-card {
+    width: min(850px, 96vw);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 26px;
+    border: 4px solid var(--ocean-border);
+    border-radius: 14px;
+    background: linear-gradient(180deg, #075a9d, #031a43);
+    box-shadow: 10px 12px 0 rgba(0,0,0,.48);
+}
+
+.service-modal-card > header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 18px;
+    border-bottom: 3px solid var(--ocean-border);
+}
+
+.service-modal-card header span {
+    color: var(--ocean-foam);
+    font-family: "Press Start 2P", monospace;
+    font-size: 8px;
+}
+
+.service-modal-card h2 {
+    margin: 10px 0 0;
+    color: var(--ocean-accent);
+    font-family: "Press Start 2P", monospace;
+    font-size: clamp(14px, 2.4vw, 20px);
+    line-height: 1.5;
+}
+
+#serviceModalClose {
+    padding: 10px;
+    border: 2px solid var(--ocean-border);
+    border-radius: 6px;
+    background: var(--ocean-panel);
+    color: var(--ocean-text);
+    font-family: "Press Start 2P", monospace;
+    font-size: 8px;
+    cursor: pointer;
+}
+
+.service-modal-content {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 24px;
+    padding: 24px 0;
+}
+
+.modal-icon {
+    display: grid;
+    place-items: center;
+    width: 100px;
+    height: 100px;
+    border: 3px solid var(--ocean-accent);
+    border-radius: 50%;
+    color: var(--ocean-accent);
+    font-size: 38px;
+}
+
+#serviceModalList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 12px 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#serviceModalList li {
+    position: relative;
+    padding-left: 22px;
+    color: var(--ocean-text);
+    font-size: 22px;
+    line-height: 1.25;
+}
+
+#serviceModalList li::before {
+    content: "◆";
+    position: absolute;
+    left: 0;
+    color: var(--ocean-accent);
+    font-size: 10px;
+}
+
+.modal-contact { width: 100%; border-color: var(--ocean-accent); color: var(--ocean-accent); }
+
+body.deep-ocean .ocean-world {
+    background: #17146e;
+}
+
+/* Cenário limpo: apenas o fundo escolhido e o conteúdo. */
+.ocean-world::before,
+.water-light,
+.bubble-field,
+.bubble-pixel,
+.level-decoration,
+.fish,
+.squid,
+.reef,
+.sea-floor,
+.coral,
+.plant,
+.service-card::after {
+    display: none !important;
+}
+
+.service-grid {
+    min-height: 0;
+    padding-bottom: 70px;
+    border-color: transparent;
+    box-shadow: none;
+    background: transparent;
+    overflow: visible;
+}
+
+.graphic-card,
+.ux-card,
+.frontend-card {
+    margin-top: 45px;
+}
+
+@media (max-width: 820px) {
+    .ocean-world { padding: 25px 14px 130px; }
+    .ocean-header { grid-template-columns: auto auto; }
+    .ocean-title { grid-column: 1 / -1; grid-row: 1; }
+    .ocean-header > :first-child { grid-row: 2; justify-self: start; }
+    .ocean-header > button { grid-row: 2; justify-self: end; }
+    .ocean-hud { flex-direction: column; align-items: center; }
+    .service-grid {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        padding: 70px 18px 130px;
+    }
+    .service-card { min-height: 340px; border-radius: 4px; }
+    .graphic-card,
+    .ux-card,
+    .frontend-card { margin-top: 45px; }
+    .level-decoration { opacity: .45; }
+    .ocean-cta { align-items: stretch; flex-direction: column; text-align: center; }
+}
+
+/* Personagem a nadar pela fase */
+.swimming-player {
+    position: absolute;
+    z-index: 4;
+    top: 27%;
+    left: -240px;
+    width: clamp(135px, 16vw, 220px);
+    aspect-ratio: 1;
+    pointer-events: none;
+    image-rendering: pixelated;
+    animation: swimAcrossScreen 18s steps(90, end) infinite;
+}
+
+.swim-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.swim-frame-one {
+    animation: swimPoseOne .9s steps(1, end) infinite;
+}
+
+.swim-frame-two {
+    animation: swimPoseTwo .9s steps(1, end) infinite;
+}
+
+@keyframes swimPoseOne {
+    0%, 54.99% { opacity: 1; }
+    55%, 100% { opacity: 0; }
+}
+
+@keyframes swimPoseTwo {
+    0%, 54.99% { opacity: 0; }
+    55%, 100% { opacity: 1; }
+}
+
+@keyframes swimAcrossScreen {
+    0%   { transform: translate(0, 0); }
+    18%  { transform: translate(calc(22vw + 120px), 34px); }
+    38%  { transform: translate(calc(44vw + 170px), -22px); }
+    58%  { transform: translate(calc(66vw + 210px), 48px); }
+    78%  { transform: translate(calc(88vw + 250px), -12px); }
+    100% { transform: translate(calc(100vw + 480px), 26px); }
+}
+
+@media (max-width: 820px) {
+    .swimming-player {
+        top: 18%;
+        width: 135px;
+        animation-duration: 14s;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .swimming-player {
+        display: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .service-intro { grid-template-columns: 1fr; text-align: center; }
+    .diver-avatar { margin-inline: auto; }
+    .service-modal-content { grid-template-columns: 1fr; }
+    .modal-icon { margin-inline: auto; }
+    #serviceModalList { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .water-light,
+    .bubble-pixel { animation: none; }
+}
+
+/* ===========================
+   PIXEL ART OVERRIDES
+   Formas, sombras e movimentos sem suavização.
+=========================== */
+
+.ocean-world,
+.ocean-world * {
+    image-rendering: pixelated;
+}
+
+.ocean-world {
+    background-color: #0865b7;
+    background-image:
+        linear-gradient(rgba(4, 31, 91, .08), rgba(4, 31, 91, .08)),
+        url("../imagens/fundo-servicos-oceano.png");
+    background-position: center, center top;
+    background-size: cover, cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.water-light {
+    display: none;
+}
+
+.ocean-button,
+.open-service,
+.ocean-hud,
+.service-intro,
+.service-card,
+.service-icon,
+.ocean-cta,
+.service-modal-card,
+#serviceModalClose,
+.modal-icon,
+.quest-number {
+    border-radius: 0;
+    backdrop-filter: none;
+    transition: none;
+}
+
+.ocean-button,
+.open-service,
+#serviceModalClose {
+    box-shadow: 5px 5px 0 #020d32;
+}
+
+.ocean-button:hover,
+.ocean-button:focus-visible,
+.open-service:hover,
+.open-service:focus-visible {
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0 #020d32;
+}
+
+.ocean-hud,
+.service-intro,
+.ocean-cta {
+    background: #07276c;
+    box-shadow:
+        inset 4px 4px 0 #155bb0,
+        inset -4px -4px 0 #03153f,
+        7px 7px 0 #020d32;
+}
+
+.diver-avatar {
+    border-radius: 0;
+    background: #155bb0;
+    box-shadow:
+        inset 5px 5px 0 #4bcde9,
+        inset -5px -5px 0 #082c72,
+        6px 6px 0 #020d32;
+}
+
+.service-grid {
+    background-color: #4038ed;
+    background-image:
+        linear-gradient(90deg, rgba(255,255,255,.04) 0 2px, transparent 2px 24px),
+        linear-gradient(rgba(255,255,255,.04) 0 2px, transparent 2px 24px);
+    background-size: 24px 24px;
+    box-shadow:
+        inset 6px 6px 0 #736cf8,
+        inset -6px -6px 0 #1d187f,
+        8px 8px 0 #07052d;
+}
+
+.service-card {
+    background: #082b75;
+    box-shadow:
+        inset 6px 6px 0 #1768b4,
+        inset -6px -6px 0 #03163e,
+        9px 9px 0 #020d32;
+}
+
+.service-card::before {
+    border-radius: 0;
+    box-shadow: 4px 4px 0 #020d32;
+}
+
+.service-card::after {
+    background-color: #087c36;
+    background-image:
+        linear-gradient(135deg, transparent 0 35%, #42df6c 36% 52%, transparent 53% 100%);
+    background-size: 32px 32px;
+    box-shadow:
+        inset 0 6px 0 #64ef7e,
+        inset 0 -6px 0 #044721,
+        7px 8px 0 #020d32;
+}
+
+.service-icon {
+    background: #0a4191;
+    box-shadow:
+        inset 5px 5px 0 #2584cf,
+        inset -5px -5px 0 #041c50,
+        5px 5px 0 #020d32;
+}
+
+.bubble-pixel {
+    border-radius: 0;
+    border-width: 3px;
+    animation-timing-function: steps(12, end);
+}
+
+.fish {
+    width: 48px;
+    height: 32px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    clip-path: none;
+}
+
+.fish span {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 32px;
+    height: 16px;
+    background: #ff8736;
+    box-shadow:
+        -8px 4px 0 #ff8736,
+        8px -4px 0 #ffad4a,
+        8px 4px 0 #c84c20,
+        24px 0 0 #ff8736,
+        32px -8px 0 #ff8736,
+        32px 8px 0 #ff8736;
+}
+
+.fish::before {
+    z-index: 2;
+    top: 9px;
+    right: 5px;
+    width: 5px;
+    height: 5px;
+    border: 0;
+    border-radius: 0;
+    background: #fff;
+    box-shadow: 2px 0 0 #111;
+}
+
+.fish::after {
+    display: none;
+}
+
+.squid {
+    width: 40px;
+    height: 48px;
+    border-radius: 0;
+    border: 0;
+    background: #f6f4ee;
+    box-shadow:
+        -8px 8px 0 #f6f4ee,
+        8px 8px 0 #f6f4ee,
+        -8px 16px 0 #d5d4e5,
+        8px 16px 0 #d5d4e5,
+        inset 0 -8px 0 #c8c6d7;
+    animation-timing-function: steps(4, end);
+}
+
+.squid::before {
+    top: 12px;
+    left: 5px;
+}
+
+.squid::after {
+    right: 0;
+    bottom: -16px;
+    left: 0;
+    background: repeating-linear-gradient(90deg, #f6f4ee 0 6px, transparent 6px 11px);
+}
+
+.reef {
+    box-shadow:
+        16px 24px 0 #ff5c90,
+        -8px 40px 0 #ff5c90,
+        8px -12px 0 #ff8aaf;
+}
+
+.coral,
+.plant {
+    border-radius: 0;
+}
+
+.sea-floor {
+    background-color: #08702f;
+    background-image:
+        linear-gradient(135deg, transparent 0 34%, #39cf61 35% 52%, transparent 53% 100%);
+    background-size: 40px 40px;
+    box-shadow:
+        inset 0 8px 0 #73ed74,
+        inset 0 -8px 0 #034b20;
+}
+
+.service-modal {
+    backdrop-filter: none;
+    background: rgba(1, 7, 32, .92);
+}
+
+.service-modal-card {
+    background: #07357b;
+    box-shadow:
+        inset 6px 6px 0 #1768b4,
+        inset -6px -6px 0 #021338,
+        10px 10px 0 #01081f;
+}
+
+body.deep-ocean .ocean-world {
+    background-color: #043b78;
+    background-image:
+        linear-gradient(rgba(1, 12, 55, .48), rgba(1, 12, 55, .48)),
+        url("../imagens/fundo-servicos-oceano.png");
+    background-position: center, center top;
+    background-size: cover, cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@media (max-width: 820px) {
+    .ocean-world,
+    body.deep-ocean .ocean-world {
+        background-attachment: scroll;
+        background-position: center, center top;
+        background-size: cover, auto 100vh;
+        background-repeat: no-repeat, repeat-y;
+    }
+}
+
+/* ===========================
+   RESPONSIVIDADE FINAL
+=========================== */
+
+.swimming-player {
+    left: -190px;
+    width: clamp(105px, 12vw, 165px);
+}
+
+.service-grid {
+    min-height: 0;
+    padding: 55px 0 65px;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+}
+
+.service-card {
+    width: 100%;
+    min-width: 0;
+}
+
+@media (max-width: 1024px) {
+    .ocean-world {
+        padding-inline: 18px;
+    }
+
+    .ocean-header,
+    .ocean-hud,
+    .service-intro,
+    .service-grid,
+    .ocean-cta {
+        width: min(940px, 100%);
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 38px 24px;
+    }
+
+    .frontend-card {
+        grid-column: 1 / -1;
+        width: min(460px, 100%);
+        justify-self: center;
+    }
+
+    .swimming-player {
+        width: 125px;
+    }
+}
+
+@media (max-width: 820px) {
+    .ocean-world {
+        padding: 22px 14px 60px;
+    }
+
+    .ocean-header {
+        grid-template-columns: 1fr auto;
+        gap: 14px;
+    }
+
+    .ocean-title {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .ocean-header > :first-child {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: start;
+    }
+
+    .ocean-header > button {
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: end;
+    }
+
+    .ocean-title h1 {
+        font-size: clamp(24px, 8vw, 38px);
+    }
+
+    .ocean-title p {
+        font-size: clamp(20px, 5vw, 25px);
+    }
+
+    .ocean-hud {
+        flex-direction: column;
+        align-items: center;
+        gap: 7px;
+        padding: 12px;
+        text-align: center;
+    }
+
+    .service-intro {
+        grid-template-columns: 100px 1fr;
+        gap: 16px;
+        padding: 18px;
+    }
+
+    .diver-avatar {
+        width: 90px;
+        height: 90px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 45px 0 55px;
+    }
+
+    .graphic-card,
+    .ux-card,
+    .frontend-card {
+        grid-column: auto;
+        width: min(520px, 100%);
+        margin-top: 28px;
+        justify-self: center;
+    }
+
+    .ocean-cta {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .cta-button {
+        width: 100%;
+    }
+
+    .swimming-player {
+        top: 15%;
+        left: -125px;
+        width: 100px;
+        animation-duration: 15s;
+    }
+
+    .service-modal-card {
+        width: min(94vw, 720px);
+        max-height: 88vh;
+        padding: 20px;
+    }
+
+    #serviceModalList {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .ocean-world {
+        padding-inline: 10px;
+    }
+
+    .ocean-button {
+        min-height: 42px;
+        padding: 9px 10px;
+        font-size: 7px;
+    }
+
+    .service-intro {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .diver-avatar {
+        margin-inline: auto;
+    }
+
+    .service-card {
+        min-height: 0;
+        padding: 22px 16px 18px;
+    }
+
+    .service-icon {
+        width: 76px;
+        height: 76px;
+        margin: 17px 0;
+        font-size: 30px;
+    }
+
+    .service-card h2 {
+        font-size: 11px;
+    }
+
+    .service-card p,
+    .service-intro p,
+    .ocean-cta p,
+    #serviceModalList li {
+        font-size: 20px;
+    }
+
+    .service-modal-content {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .modal-icon {
+        width: 76px;
+        height: 76px;
+        margin-inline: auto;
+    }
+
+    .service-modal-card > header {
+        gap: 12px;
+    }
+
+    .swimming-player {
+        top: 12%;
+        width: 82px;
+    }
+}
+
+@media (max-width: 380px) {
+    .ocean-title h1 {
+        font-size: 22px;
+    }
+
+    .ocean-hud {
+        font-size: 7px;
+    }
+
+    .service-modal-card {
+        padding: 14px;
+    }
+
+    .service-modal-card > header {
+        flex-direction: column;
+    }
+
+    #serviceModalClose {
+        align-self: flex-end;
+    }
+}

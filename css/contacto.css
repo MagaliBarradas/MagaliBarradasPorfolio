@@ -1,362 +1,517 @@
-/* CSS DO CONTACTO  */
-
-
 /* ===========================
-   CONTACTO
+   CONTACT WORLD
 =========================== */
 
+:root {
+    --contact-bg: #0f1b3d;
+    --contact-panel: rgba(9, 18, 45, .94);
+    --contact-panel-soft: rgba(17, 27, 55, .94);
+    --contact-border: #4260b4;
+    --contact-accent: #ffd84a;
+    --contact-text: #ffffff;
+    --contact-muted: #c9d2ee;
+    --contact-success: #54df88;
+    --contact-danger: #ff7070;
+}
+
 body {
-    background: #0f1b3d;
+    min-width: 320px;
     overflow-x: hidden;
+    background: var(--contact-bg);
+    color: var(--contact-text);
 }
 
 .contact-page {
-
     min-height: 100vh;
-
+    padding: 36px 20px 0;
     background:
-        linear-gradient(rgba(7, 15, 35, .55), rgba(7, 15, 35, .8)),
-        url("../imagens/castelo-contacto.png") center/cover no-repeat;
-
-    padding: 80px 20px;
-
+        linear-gradient(rgba(8, 12, 30, .36), rgba(8, 12, 30, .82)),
+        url("../imagens/contacto.png") center / cover fixed no-repeat;
 }
 
-/* ---------- HERO ---------- */
+/* ---------- CABEÇALHO ---------- */
 
 .contact-header {
-
-    max-width: 900px;
-
-    margin: auto;
-
-    text-align: center;
-
-    padding-bottom: 60px;
-
-}
-
-.contact-header h1 {
-
-    font-family: "Press Start 2P";
-
-    font-size: 30px;
-
-    color: var(--accent);
-
-    margin-bottom: 30px;
-
-}
-
-.contact-header p {
-
-    font-size: 28px;
-
-    line-height: 1.6;
-
-    color: white;
-
-}
-
-/* ---------- PERSONAGEM ---------- */
-
-.hero-character {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    margin-bottom: 70px;
-
-    position: relative;
-
-}
-
-.player {
-
-    width: 180px;
-
-    height: 180px;
-
-    background: url("../imagens/personagem.png") center/contain no-repeat;
-
-    animation: floatPlayer 2s ease-in-out infinite;
-
-    z-index: 2;
-
-}
-
-.contact-page {
-
-    min-height: 100vh;
-
-    background:
-        linear-gradient(rgba(8, 12, 30, .30), rgba(8, 12, 30, .80)),
-        url("../imagens/contacto.png");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-@keyframes floatPlayer {
-
-    0%,
-    100% {
-
-        transform: translateY(0);
-
-    }
-
-    50% {
-
-        transform: translateY(-10px);
-
-    }
-
-}
-
-/* ---------- CARDS ---------- */
-
-.contact-cards {
-
     display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-
-    gap: 25px;
-
-    max-width: 1200px;
-
-    margin: auto;
-
-    margin-bottom: 70px;
-
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 20px;
+    width: min(1180px, 100%);
+    margin: 0 auto 24px;
 }
 
-.contact-card {
+.contact-title {
+    text-align: center;
+}
 
+.contact-title > span {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--contact-muted);
+    font-family: "Press Start 2P", monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.contact-title h1 {
+    margin: 0 0 14px;
+    color: var(--contact-accent);
+    font-family: "Press Start 2P", monospace;
+    font-size: clamp(25px, 4vw, 46px);
+    line-height: 1.25;
+    text-shadow: 4px 4px 0 #6f4500;
+}
+
+.contact-title p {
+    margin: 0;
+    font-size: clamp(22px, 2.6vw, 30px);
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, .9);
+}
+
+.pixel-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 46px;
+    padding: 12px 15px;
+    border: 3px solid var(--contact-border);
+    border-radius: 8px;
+    background: var(--contact-panel);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, .55);
+    color: var(--contact-text);
+    font-family: "Press Start 2P", monospace;
+    font-size: 9px;
     text-decoration: none;
-
-    color: white;
-
-    background: var(--panel);
-
-    border: 2px solid var(--border);
-
-    border-radius: 14px;
-
-    padding: 30px;
-
-    text-align: center;
-
-    transition: .25s;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, .4);
-
-}
-
-.contact-card:hover {
-
-    transform: translateY(-8px);
-
-    border-color: var(--accent);
-
-}
-
-.contact-card i {
-
-    font-size: 42px;
-
-    color: var(--accent);
-
-    margin-bottom: 20px;
-
-}
-
-.contact-card h2 {
-
-    font-family: "Press Start 2P";
-
-    font-size: 12px;
-
-    margin-bottom: 18px;
-
-}
-
-.contact-card p {
-
-    font-size: 24px;
-
-}
-
-/* ---------- FORM ---------- */
-
-.form-area {
-
-    max-width: 900px;
-
-    margin: auto;
-
-}
-
-.form-panel {
-
-    padding: 45px;
-
-}
-
-.form-panel h2 {
-
-    text-align: center;
-
-    color: var(--accent);
-
-    margin-bottom: 35px;
-
-    font-family: "Press Start 2P";
-
-    font-size: 16px;
-
-}
-
-form {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 18px;
-
-}
-
-label {
-
-    font-family: "Press Start 2P";
-
-    font-size: 10px;
-
-    color: var(--accent);
-
-}
-
-input,
-textarea {
-
-    background: #111b37;
-
-    border: 2px solid var(--border);
-
-    color: white;
-
-    padding: 16px;
-
-    font-family: "VT323";
-
-    font-size: 26px;
-
-    border-radius: 10px;
-
-    outline: none;
-
-}
-
-input:focus,
-textarea:focus {
-
-    border-color: var(--accent);
-
-}
-
-button {
-
-    margin-top: 20px;
-
-    padding: 18px;
-
-    border: none;
-
-    border-radius: 10px;
-
-    background: var(--accent);
-
-    font-family: "Press Start 2P";
-
     cursor: pointer;
-
-    transition: .2s;
-
 }
 
-button:hover {
-
-    transform: translateY(-4px);
-
+.pixel-button:hover,
+.pixel-button:focus-visible {
+    border-color: var(--contact-accent);
+    color: var(--contact-accent);
+    transform: translateY(-2px);
 }
 
-/* ---------- BOTÃO ---------- */
+.theme-button {
+    width: 48px;
+    padding-inline: 0;
+}
 
-.back-home {
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    padding: 13px 18px;
+    border: 3px solid var(--contact-border);
+    background: var(--contact-panel);
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, .48);
+    color: var(--contact-accent);
+    font-family: "Press Start 2P", monospace;
+    font-size: clamp(8px, 1.25vw, 11px);
+    line-height: 1.5;
+}
 
+/* ---------- CONTEÚDO ---------- */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(280px, .8fr);
+    gap: 28px;
+    width: min(1180px, 100%);
+    margin: 28px auto 0;
+}
+
+.mission-panel,
+.player-profile {
+    border: 3px solid var(--contact-border);
+    border-radius: 12px;
+    background: var(--contact-panel);
+    box-shadow: 8px 9px 0 rgba(0, 0, 0, .48);
+    backdrop-filter: blur(6px);
+}
+
+.mission-panel {
+    padding: clamp(24px, 4vw, 44px);
+}
+
+.mission-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.quest-number {
+    flex: 0 0 auto;
+    padding: 10px 12px;
+    border: 2px solid var(--contact-accent);
+    border-radius: 6px;
+    background: rgba(255, 216, 74, .1);
+    color: var(--contact-accent);
+    font-family: "Press Start 2P", monospace;
+    font-size: 8px;
+}
+
+.mission-heading h2,
+.player-profile h2 {
+    margin: 0;
+    color: var(--contact-accent);
+    font-family: "Press Start 2P", monospace;
+    line-height: 1.5;
+}
+
+.mission-heading h2 {
+    font-size: clamp(13px, 2vw, 18px);
+}
+
+.mission-heading p {
+    margin: 7px 0 0;
+    color: var(--contact-muted);
+    font-size: 22px;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+#contactForm label {
+    color: var(--contact-accent);
+    font-family: "Press Start 2P", monospace;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 15px 16px;
+    border: 2px solid var(--contact-border);
+    border-radius: 8px;
+    outline: none;
+    background: var(--contact-panel-soft);
+    color: var(--contact-text);
+    font-family: "VT323", monospace;
+    font-size: 25px;
+    resize: vertical;
+}
+
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+    color: #91a0c6;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    border-color: var(--contact-accent);
+    box-shadow: 0 0 0 3px rgba(255, 216, 74, .15);
+}
+
+.send-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    width: 100%;
+    margin-top: 9px;
+    padding: 17px;
+    border: 3px solid #9b6c00;
+    border-radius: 8px;
+    background: var(--contact-accent);
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, .48);
+    color: #10162f;
+    font-family: "Press Start 2P", monospace;
+    font-size: 10px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.send-button:hover:not(:disabled),
+.send-button:focus-visible:not(:disabled) {
+    transform: translateY(-3px);
+}
+
+.send-button:disabled {
+    cursor: wait;
+    opacity: .7;
+}
+
+.form-status {
+    min-height: 26px;
+    margin: 0;
+    font-size: 21px;
     text-align: center;
-
-    margin-top: 70px;
-
 }
 
-.back-home a {
+.form-status.success {
+    color: var(--contact-success);
+}
 
-    display: inline-block;
+.form-status.error {
+    color: var(--contact-danger);
+}
 
-    padding: 16px 28px;
+/* ---------- PLAYER PROFILE ---------- */
 
-    color: white;
+.player-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: start;
+    padding: 28px 24px;
+    text-align: center;
+}
 
+.avatar-frame {
+    position: relative;
+    width: min(210px, 80%);
+    aspect-ratio: 1;
+    margin-bottom: 22px;
+    overflow: hidden;
+    border: 4px solid var(--contact-accent);
+    border-radius: 10px;
+    background: rgba(66, 96, 180, .18);
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, .5);
+    image-rendering: pixelated;
+}
+
+.avatar-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    image-rendering: pixelated;
+}
+
+.avatar-image-one {
+    animation: avatarFrameOne .8s steps(1, end) infinite;
+}
+
+.avatar-image-two {
+    animation: avatarFrameTwo .8s steps(1, end) infinite;
+}
+
+@keyframes avatarFrameOne {
+    0%, 49.99% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+@keyframes avatarFrameTwo {
+    0%, 49.99% { opacity: 0; }
+    50%, 100% { opacity: 1; }
+}
+
+.profile-label {
+    margin-bottom: 13px;
+    color: var(--contact-muted);
+    font-family: "Press Start 2P", monospace;
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.player-profile h2 {
+    font-size: 14px;
+}
+
+.player-role {
+    margin: 12px 0 17px;
+    color: var(--contact-muted);
+    font-size: 24px;
+}
+
+.availability {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 18px;
+    padding: 10px;
+    border: 2px solid var(--contact-border);
+    border-radius: 6px;
+    font-family: "Press Start 2P", monospace;
+    font-size: 7px;
+    line-height: 1.5;
+}
+
+.availability > span {
+    width: 9px;
+    height: 9px;
+    background: var(--contact-success);
+    box-shadow: 0 0 10px var(--contact-success);
+    animation: statusBlink 1.4s steps(1, end) infinite;
+}
+
+@keyframes statusBlink {
+    50% { opacity: .3; }
+}
+
+.contact-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+}
+
+.contact-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 48px;
+    padding: 10px 7px;
+    border: 2px solid var(--contact-border);
+    border-radius: 7px;
+    background: var(--contact-panel-soft);
+    color: var(--contact-text);
+    font-family: "Press Start 2P", monospace;
+    font-size: 7px;
+    line-height: 1.5;
     text-decoration: none;
+}
 
+.contact-links a:hover,
+.contact-links a:focus-visible {
+    border-color: var(--contact-accent);
+    color: var(--contact-accent);
+    transform: translateY(-2px);
+}
+
+.player-profile blockquote {
+    margin: 24px 0 0;
+    color: var(--contact-muted);
+    font-size: 21px;
+    line-height: 1.35;
+}
+
+/* ---------- FIM DA FASE ---------- */
+
+.level-end {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: calc(100% + 40px);
+    margin: 52px 0 0 -20px;
+    padding: 18px 20px;
+    border-top: 4px solid #8d551f;
+    background:
+        linear-gradient(rgba(102, 55, 19, .12), rgba(102, 55, 19, .12)),
+        repeating-linear-gradient(90deg, #b66a28 0 64px, #8d551f 64px 68px);
+    box-shadow: inset 0 4px 0 rgba(255, 255, 255, .16);
+    color: #fff8d6;
+    font-family: "Press Start 2P", monospace;
+    font-size: clamp(7px, 1.25vw, 10px);
+    line-height: 1.5;
+    text-align: center;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, .7);
+}
+
+/* ---------- TEMA ESCURO ---------- */
+
+body.contact-dark .contact-page {
+    background:
+        linear-gradient(rgba(3, 5, 18, .66), rgba(3, 5, 18, .9)),
+        url("../imagens/contacto.png") center / cover fixed no-repeat;
 }
 
 /* ---------- RESPONSIVO ---------- */
 
-@media(max-width:768px) {
-
-    .contact-header h1 {
-
-        font-size: 18px;
-
+@media (max-width: 820px) {
+    .contact-page {
+        padding: 26px 14px 0;
+        background-attachment: scroll;
     }
 
-    .contact-header p {
-
-        font-size: 22px;
-
+    .contact-header {
+        grid-template-columns: auto auto;
+        margin-bottom: 20px;
     }
 
-    .player {
-
-        width: 120px;
-
-        height: 120px;
-
+    .contact-title {
+        grid-column: 1 / -1;
+        grid-row: 1;
     }
 
-    .castle {
-
-        width: 280px;
-
+    .back-map {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: start;
     }
 
-    .form-panel {
-
-        padding: 25px;
-
+    .theme-button {
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: end;
     }
 
+    .status-bar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .player-profile {
+        order: -1;
+        width: 100%;
+    }
+
+    .avatar-frame {
+        width: 150px;
+    }
+
+    .level-end {
+        width: calc(100% + 28px);
+        margin-left: -14px;
+    }
 }
 
+@media (max-width: 480px) {
+    .contact-title h1 {
+        font-size: 23px;
+    }
 
+    .mission-panel,
+    .player-profile {
+        padding: 22px 16px;
+    }
 
+    .mission-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
 
+    .contact-links {
+        grid-template-columns: 1fr;
+    }
+
+    .level-end span {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .avatar-image,
+    .availability > span {
+        animation: none;
+    }
+
+    .avatar-image-one {
+        opacity: 1;
+    }
+
+    .avatar-image-two {
+        opacity: 0;
+    }
+}

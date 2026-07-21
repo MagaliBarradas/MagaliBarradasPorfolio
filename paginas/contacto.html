@@ -1,151 +1,127 @@
 <!doctype html>
 <html lang="pt">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Contacto | Magali Barradas</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/contacto.css">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track" id="marquee"></div>
+    </div>
 
-<div class="contact-page">
+    <main class="contact-page">
+        <header class="contact-header">
+            <a class="pixel-button back-map" href="../index.html">
+                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                MAPA
+            </a>
 
-<header class="contact-header">
+            <div class="contact-title">
+                <span>NEW MISSION</span>
+                <h1>CONTACTO</h1>
+                <p>Vamos conversar sobre o teu próximo projeto?</p>
+            </div>
 
-<h1>🏰 CONTACTO</h1>
+            <button class="pixel-button theme-button" id="themeBtn" type="button" aria-label="Ativar tema escuro">
+                <i class="fa-solid fa-moon" aria-hidden="true"></i>
+            </button>
+        </header>
 
-<p>
+        <div class="status-bar" aria-label="Estado da missão">
+            <span>PLAYER: MAGALI</span>
+            <span>WORLD: CONTACT</span>
+            <span>MISSION: 01</span>
+        </div>
 
-Chegaste ao último nível.
+        <div class="contact-layout">
+            <section class="mission-panel panel" aria-labelledby="missionTitle">
+                <div class="mission-heading">
+                    <span class="quest-number">QUEST 01</span>
+                    <div>
+                        <h2 id="missionTitle">ENVIAR MENSAGEM</h2>
+                        <p>Preenche os campos para completar esta missão.</p>
+                    </div>
+                </div>
 
-<br><br>
+                <form id="contactForm">
+                    <label for="from_name">NOME DO JOGADOR</label>
+                    <input id="from_name" type="text" name="from_name" placeholder="O teu nome" autocomplete="name" required>
 
-Se gostaste do meu trabalho, agora é a tua vez de dar o primeiro passo.
+                    <label for="from_email">E-MAIL</label>
+                    <input id="from_email" type="email" name="from_email" placeholder="email@exemplo.com" autocomplete="email" required>
 
-</p>
+                    <label for="message">MENSAGEM</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Conta-me sobre o teu projeto..." required></textarea>
 
-</header>
+                    <button class="send-button" type="submit">
+                        <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                        ENVIAR MENSAGEM
+                    </button>
 
+                    <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                </form>
+            </section>
 
-<section class="hero-character">
+            <aside class="player-profile panel" aria-labelledby="playerName">
+                <div class="avatar-frame">
+                    <img class="avatar-image avatar-image-one" src="../imagens/avatar-contacto-1.png" alt="Avatar de Magali Barradas">
+                    <img class="avatar-image avatar-image-two" src="../imagens/avatar-contacto-2.png" alt="" aria-hidden="true">
+                </div>
 
-<div class="castle"></div>
+                <span class="profile-label">PLAYER PROFILE</span>
+                <h2 id="playerName">MAGALI BARRADAS</h2>
+                <p class="player-role">Designer · UI/UX · Frontend</p>
 
-<div class="player"></div>
+                <div class="availability">
+                    <span aria-hidden="true"></span>
+                    DISPONÍVEL PARA NOVAS MISSÕES
+                </div>
 
-</section>
+                <nav class="contact-links" aria-label="Contactos e redes sociais">
+                    <a href="mailto:magalicsbarradas@gmail.com">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        <span>E-MAIL</span>
+                    </a>
 
+                    <a href="https://wa.me/351932455443" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        <span>WHATSAPP</span>
+                    </a>
 
-<section class="contact-cards">
+                    <a href="https://www.instagram.com/rotulocriativo/" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        <span>INSTAGRAM</span>
+                    </a>
 
-<a href="mailto:magalicsbarradas@gmail.com" class="contact-card">
+                    <a href="#" aria-label="LinkedIn - adicionar ligação">
+                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                        <span>LINKEDIN</span>
+                    </a>
+                </nav>
 
-<i class="fa-solid fa-envelope"></i>
+                <blockquote>“Cada novo projeto é uma fase por descobrir.”</blockquote>
+            </aside>
+        </div>
 
-<h2>Email</h2>
+        <footer class="level-end" aria-hidden="true">
+            <span>◀</span>
+            <strong>END OF LEVEL · PRESS MAP TO RETURN</strong>
+            <span>▶</span>
+        </footer>
+    </main>
 
-<p>magalicsbarradas@gmail.com</p>
-
-</a>
-
-
-<a href="https://wa.me.932455443" target="_blank" class="contact-card">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-<h2>Whatsapp</h2>
-
-<p>Vamos conectar-nos.</p>
-
-</a>
-
-
-
-<a href="https://www.instagram.com/rotulocriativo/" target="_blank" class="contact-card">
-
-<i class="fa-brands fa-instagram"></i>
-
-<h2>Instagram</h2>
-
-<p>@rotulocriativo</p>
-
-</a>
-
-</section>
-
-
-<section class="form-area">
-
-<div class="panel form-panel">
-
-<h2>Enviar Missão</h2>
-
-<form id="contactForm">
-
-<label>Nome</label>
-
-<input
-    type="text"
-    name="from_name"
-    placeholder="O teu nome"
-    required>
-
-<label>Email</label>
-
-<input
-    type="email"
-    name="from_email"
-    placeholder="email@exemplo.com"
-    required>
-
-<label>Mensagem</label>
-
-<textarea
-    name="message"
-    rows="7"
-    placeholder="Conta-me sobre o teu projeto..."
-    required></textarea>
-
-<button type="submit">
-🚀 ENVIAR MISSÃO
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-
-<div class="back-home">
-
-<a href="../index.html" class="panel">
-
-⬅ Voltar ao mapa
-
-</a>
-
-</div>
-
-</div>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script src="../Javascript/contacto.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="../Javascript/contacto.js"></script>
+    <script src="../Javascript/orientation.js" defer></script>
 </body>
-
 </html>
