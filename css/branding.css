@@ -106,6 +106,7 @@ button:focus-visible, a:focus-visible { outline: 4px solid #fff; outline-offset:
 }
 .pixel-button:hover { color: var(--yellow); transform: translateY(-2px); }
 .theme-button { width: 54px; padding: 0; }
+.language-toggle { width: 60px; padding-inline: 8px; justify-self: end; }
 
 .status-bar {
   display: flex;
@@ -204,6 +205,7 @@ button:focus-visible, a:focus-visible { outline: 4px solid #fff; outline-offset:
   .back { width: 48px; min-height: 44px; padding: 5px; font-size: 0; }
   .back::before { content: "←"; font-size: 17px; }
   .theme-button { width: 48px; min-height: 44px; }
+  .language-toggle { width: 48px; min-height: 44px; padding: 4px; font-size: 8px; }
   .title-block > p:last-child { display: none; }
   .eyebrow { font-size: 7px; }
   .status-bar { margin: 2px 12px 24px; padding: 10px; }

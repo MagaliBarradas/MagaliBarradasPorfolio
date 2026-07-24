@@ -7,14 +7,19 @@ const modalBody = document.getElementById("modalBody");
 const marquee = document.getElementById("marquee");
 const hintBubble = document.getElementById("hintBubble");
 
-if (marquee) marquee.textContent = "MEU PORTFÓLIO • ".repeat(40);
+function updateMarquee() {
+  if (!marquee) return;
+  marquee.textContent = (window.i18n?.getLanguage() === "en" ? "MY PORTFOLIO • " : "MEU PORTEFÓLIO • ").repeat(40);
+}
+
+updateMarquee();
 
 const SECTIONS = {
-  sobre: { title: "Sobre Mim", body: "" },
-  ux: { title: "UI/UX Frontend", url: "./paginas/frontend.html" },
+  sobre: { titleKey: "home.about", body: "" },
+  ux: { title: "UI/UX Frontend", url: "./paginas/Frontend.html" },
   branding: { title: "Branding", url: "./paginas/Branding.html" },
-  contacto: { title: "Contacto", url: "./paginas/contacto.html" },
-  servicos: { title: "Serviços", url: "./paginas/servicos.html" }
+  contacto: { titleKey: "home.contactArea", url: "./paginas/contacto.html" },
+  servicos: { titleKey: "home.services", url: "./paginas/servicos.html" }
 };
 
 let pos = { x: 45, y: 72 };
@@ -65,7 +70,7 @@ function openSection(id) {
   }
 
   if (!modal || !modalTitle || !modalBody) return;
-  modalTitle.textContent = section.title;
+  modalTitle.textContent = section.titleKey ? window.i18n.t(section.titleKey) : section.title;
 
   if (id === "sobre") {
     const about = document.getElementById("aboutContent");
@@ -100,7 +105,7 @@ function interactWithNearestSection() {
   }
 
   if (hintBubble) {
-    hintBubble.innerHTML = "Aproxima-te de<br>uma caixa ?";
+    hintBubble.innerHTML = window.i18n?.t("home.nearHint") ?? "Aproxima-te de<br>uma caixa ?";
     hintBubble.style.display = "block";
     window.setTimeout(() => { hintBubble.style.display = "none"; }, 1600);
   }
@@ -154,5 +159,7 @@ document.querySelector(".mobile-gamepad")?.addEventListener("dblclick", event =>
 document.querySelectorAll(".coin").forEach(coin => {
   coin.addEventListener("click", () => openSection(coin.dataset.id));
 });
+
+document.addEventListener("languagechange", updateMarquee);
 
 render();

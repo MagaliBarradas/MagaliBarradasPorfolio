@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="pt">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contacto | Magali Barradas</title>
+    <title data-i18n="meta.contact">Contacto | Magali Barradas</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,18 +24,19 @@
         <header class="contact-header">
             <a class="pixel-button back-map" href="../index.html">
                 <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-                MAPA
+                <span data-i18n="nav.map">MAPA</span>
             </a>
 
             <div class="contact-title">
-                <span>NEW MISSION</span>
-                <h1>CONTACTO</h1>
-                <p>Vamos conversar sobre o teu próximo projeto?</p>
+                <span data-i18n="contact.newMission">NOVA MISSÃO</span>
+                <h1 data-i18n="contact.title">CONTACTO</h1>
+                <p data-i18n="contact.intro">Vamos conversar sobre o teu próximo projeto?</p>
             </div>
 
+            <button class="pixel-button language-toggle" type="button" data-language-toggle aria-label="Mudar para inglês">EN</button>
         </header>
 
-        <div class="status-bar" aria-label="Estado da missão">
+        <div class="status-bar" aria-label="Estado da missão" data-i18n-aria-label="contact.status">
             <span>PLAYER: MAGALI</span>
             <span>WORLD: CONTACT</span>
             <span>MISSION: 01</span>
@@ -45,24 +47,27 @@
                 <div class="mission-heading">
                     <span class="quest-number">QUEST 01</span>
                     <div>
-                        <h2 id="missionTitle">ENVIAR MENSAGEM</h2>
-                        <p>Preenche os campos para completar esta missão.</p>
+                        <h2 id="missionTitle" data-i18n="contact.sendTitle">ENVIAR MENSAGEM</h2>
+                        <p data-i18n="contact.sendDescription">Preenche os campos para completar esta missão.</p>
                     </div>
                 </div>
 
                 <form id="contactForm">
-                    <label for="from_name">NOME DO JOGADOR</label>
-                    <input id="from_name" type="text" name="from_name" placeholder="O teu nome" autocomplete="name" required>
+                    <label for="from_name" data-i18n="contact.name">NOME DO JOGADOR</label>
+                    <input id="from_name" type="text" name="from_name" placeholder="O teu nome" autocomplete="name"
+                        data-i18n-placeholder="contact.namePlaceholder" required>
 
                     <label for="from_email">E-MAIL</label>
-                    <input id="from_email" type="email" name="from_email" placeholder="email@exemplo.com" autocomplete="email" required>
+                    <input id="from_email" type="email" name="from_email" placeholder="email@exemplo.com"
+                        autocomplete="email" required>
 
-                    <label for="message">MENSAGEM</label>
-                    <textarea id="message" name="message" rows="6" placeholder="Conta-me sobre o teu projeto..." required></textarea>
+                    <label for="message" data-i18n="contact.message">MENSAGEM</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Conta-me sobre o teu projeto..."
+                        data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
 
                     <button class="send-button" type="submit">
                         <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-                        ENVIAR MENSAGEM
+                        <span data-i18n="contact.send">ENVIAR MENSAGEM</span>
                     </button>
 
                     <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
@@ -71,20 +76,22 @@
 
             <aside class="player-profile panel" aria-labelledby="playerName">
                 <div class="avatar-frame">
-                    <img class="avatar-image avatar-image-one" src="../imagens/avatar-contacto-1.webp" alt="Avatar de Magali Barradas" width="900" height="900" loading="lazy" decoding="async">
-                    <img class="avatar-image avatar-image-two" src="../imagens/avatar-contacto-2.webp" alt="" width="900" height="900" loading="lazy" decoding="async" aria-hidden="true">
+                    <img class="avatar-image avatar-image-one" src="../imagens/avatar-contacto-1.webp"
+                        alt="Avatar de Magali Barradas" data-i18n-alt="contact.avatarAlt" width="900" height="900" loading="lazy" decoding="async">
+                    <img class="avatar-image avatar-image-two" src="../imagens/avatar-contacto-2.webp" alt=""
+                        width="900" height="900" loading="lazy" decoding="async" aria-hidden="true">
                 </div>
 
-                <span class="profile-label">PLAYER PROFILE</span>
+                <span class="profile-label" data-i18n="contact.profile">PERFIL DO JOGADOR</span>
                 <h2 id="playerName">MAGALI BARRADAS</h2>
                 <p class="player-role">Designer · UI/UX · Frontend</p>
 
                 <div class="availability">
                     <span aria-hidden="true"></span>
-                    DISPONÍVEL PARA NOVAS MISSÕES
+                    <span data-i18n="contact.available">DISPONÍVEL PARA NOVAS MISSÕES</span>
                 </div>
 
-                <nav class="contact-links" aria-label="Contactos e redes sociais">
+                <nav class="contact-links" aria-label="Contactos e redes sociais" data-i18n-aria-label="contact.links">
                     <a href="mailto:magalicsbarradas@gmail.com">
                         <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                         <span>E-MAIL</span>
@@ -100,25 +107,27 @@
                         <span>INSTAGRAM</span>
                     </a>
 
-                    <a href="#" aria-label="LinkedIn - adicionar ligação">
+                    <a href="#" aria-label="LinkedIn — adicionar ligação" data-i18n-aria-label="contact.linkedin">
                         <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                         <span>LINKEDIN</span>
                     </a>
                 </nav>
 
-                <blockquote>“Cada novo projeto é uma fase por descobrir.”</blockquote>
+                <blockquote data-i18n="contact.quote">“Cada novo projeto é uma fase por descobrir.”</blockquote>
             </aside>
         </div>
 
         <footer class="level-end" aria-hidden="true">
             <span>◀</span>
-            <strong>END OF LEVEL · PRESS MAP TO RETURN</strong>
+            <strong data-i18n="contact.end">FIM DO NÍVEL · PRIME MAPA PARA VOLTAR</strong>
             <span>▶</span>
         </footer>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="../Javascript/contacto.js"></script>
+    <script src="../Javascript/translations.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+    <script src="../Javascript/contacto.js" defer></script>
     <script src="../Javascript/background-music.js" defer></script>
 </body>
+
 </html>

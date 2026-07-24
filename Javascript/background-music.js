@@ -127,13 +127,14 @@
 
   const updateButton = () => {
     const enabled = isEnabled();
+    const translate = (key, fallback) => window.i18n?.t(key) ?? fallback;
     button.dataset.enabled = String(enabled);
     button.innerHTML = enabled
-      ? '<span class="music-toggle__icon" aria-hidden="true">♫</span><span class="music-toggle__label">MÚSICA</span><span class="music-toggle__state">ON · DANÇA!</span>'
-      : '<span class="music-toggle__icon" aria-hidden="true">×</span><span class="music-toggle__label">MÚSICA</span><span class="music-toggle__state">OFF · ZZZ</span>';
+      ? `<span class="music-toggle__icon" aria-hidden="true">♫</span><span class="music-toggle__label">${translate("music.title", "MÚSICA")}</span><span class="music-toggle__state">${translate("music.on", "ON · DANÇA!")}</span>`
+      : `<span class="music-toggle__icon" aria-hidden="true">×</span><span class="music-toggle__label">${translate("music.title", "MÚSICA")}</span><span class="music-toggle__state">${translate("music.off", "OFF · ZZZ")}</span>`;
     button.setAttribute("aria-pressed", String(enabled));
-    button.setAttribute("aria-label", enabled ? "Desligar música" : "Ligar música");
-    button.title = enabled ? "Desligar música" : "Ligar música";
+    button.setAttribute("aria-label", enabled ? translate("music.offLabel", "Desligar música") : translate("music.onLabel", "Ligar música"));
+    button.title = enabled ? translate("music.offLabel", "Desligar música") : translate("music.onLabel", "Ligar música");
   };
 
   const play = () => {
@@ -182,6 +183,8 @@
   window.addEventListener("pagehide", () => {
     sessionStorage.setItem(timeKey, String(audio.currentTime));
   });
+
+  document.addEventListener("languagechange", updateButton);
 
   updateButton();
   document.head.appendChild(style);

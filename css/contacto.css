@@ -44,6 +44,12 @@ body {
     justify-self: start;
 }
 
+.contact-header .language-toggle {
+    width: 62px;
+    padding-inline: 8px;
+    justify-self: end;
+}
+
 .contact-title {
     text-align: center;
 }
@@ -452,6 +458,14 @@ body.contact-dark .contact-page {
     .theme-button {
         grid-column: 2;
         grid-row: 2;
+        justify-self: end;
+    }
+
+    .contact-header .language-toggle {
+        grid-column: 2;
+        grid-row: 2;
+        width: 52px;
+        min-height: 44px;
         justify-self: end;
     }
 

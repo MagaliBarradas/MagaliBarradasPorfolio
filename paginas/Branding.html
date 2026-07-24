@@ -1,15 +1,17 @@
 <!doctype html>
 <html lang="pt">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#24145f">
-  <title>Branding World | Magali Barradas</title>
+  <title data-i18n="meta.branding">Branding World | Magali Barradas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/branding.css">
 </head>
+
 <body>
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track" id="marquee"></div>
@@ -30,51 +32,57 @@
       </div>
 
       <header class="game-header">
-        <a class="pixel-button back" href="../index.html">← MAPA</a>
+        <a class="pixel-button back" href="../index.html">← <span data-i18n="nav.map">MAPA</span></a>
         <div class="title-block">
-          <p class="eyebrow">SELECT A PROJECT</p>
+          <p class="eyebrow" data-i18n="branding.select">SELECIONA UM PROJETO</p>
           <h1 id="pageTitle">BRANDING <span>WORLD</span></h1>
-          <p>Descobre identidades visuais num tabuleiro inspirado em minigames retrô.</p>
+          <p data-i18n="branding.intro">Descobre identidades visuais num tabuleiro inspirado em minijogos retro.</p>
         </div>
+        <button class="pixel-button language-toggle" type="button" data-language-toggle aria-label="Mudar para inglês">EN</button>
       </header>
 
       <div class="status-bar" aria-hidden="true">
         <span>PLAYER: MAGALI</span>
         <span class="status-center">★ PORTFOLIO QUEST ★</span>
-        <span>PROJECTS: 04</span>
+        <span data-i18n="branding.projects">PROJETOS: 04</span>
       </div>
 
-      <section class="board" aria-label="Projetos de branding">
+      <section class="board" aria-label="Projetos de branding" data-i18n-aria-label="branding.board">
         <button class="memory-card card-pink" type="button" data-project="casa">
           <span class="card-badge">01</span>
-          <span class="image-frame"><img src="../imagens/casa-da-arvore.webp" alt="Identidade visual Casa da Árvore" width="1366" height="768" loading="lazy" decoding="async"></span>
-          <span class="card-copy"><strong>Casa da Árvore</strong><small>Identidade visual</small></span>
-          <span class="card-action">VER PROJETO</span>
+          <span class="image-frame"><img src="../imagens/casa-da-arvore.webp" alt="Identidade visual Casa da Árvore"
+              width="1366" height="768" loading="lazy" decoding="async"></span>
+          <span class="card-copy"><strong>Casa da Árvore</strong><small data-i18n="branding.visualIdentity">Identidade visual</small></span>
+          <span class="card-action" data-i18n="branding.view">VER PROJETO</span>
         </button>
 
         <button class="memory-card card-yellow" type="button" data-project="cafe">
           <span class="card-badge">02</span>
-          <span class="image-frame"><img src="../imagens/cafe-torres.webp" alt="Identidade visual Café Tôrres" width="595" height="496" loading="lazy" decoding="async"></span>
-          <span class="card-copy"><strong>Café Tôrres</strong><small>Branding & restauração</small></span>
-          <span class="card-action">VER PROJETO</span>
+          <span class="image-frame"><img src="../imagens/cafe-torres.webp" alt="Identidade visual Café Tôrres"
+              width="595" height="496" loading="lazy" decoding="async"></span>
+          <span class="card-copy"><strong>Café Tôrres</strong><small data-i18n="branding.restaurant">Branding e restauração</small></span>
+          <span class="card-action" data-i18n="branding.view">VER PROJETO</span>
         </button>
 
         <button class="memory-card card-blue" type="button" data-project="dani">
           <span class="card-badge">03</span>
-          <span class="image-frame"><img src="../imagens/dani-braga-ink.webp" alt="Identidade visual Dani Braga Ink" width="521" height="510" loading="lazy" decoding="async"></span>
-          <span class="card-copy"><strong>Dani Braga Ink</strong><small>Marca pessoal</small></span>
-          <span class="card-action">VER PROJETO</span>
+          <span class="image-frame"><img src="../imagens/dani-braga-ink.webp" alt="Identidade visual Dani Braga Ink"
+              width="521" height="510" loading="lazy" decoding="async"></span>
+          <span class="card-copy"><strong>Dani Braga Ink</strong><small data-i18n="branding.personalBrand">Marca pessoal</small></span>
+          <span class="card-action" data-i18n="branding.view">VER PROJETO</span>
         </button>
 
         <button class="memory-card card-green" type="button" data-project="lobo">
           <span class="card-badge">04</span>
-          <span class="image-frame"><img src="../imagens/logo-lobo-urbano-preto.webp" alt="Identidade visual Lobo Urbano Barber Shop" width="595" height="496" loading="lazy" decoding="async"></span>
+          <span class="image-frame"><img src="../imagens/logo-lobo-urbano-preto.webp"
+              alt="Identidade visual Lobo Urbano Barber Shop" width="595" height="496" loading="lazy"
+              decoding="async"></span>
           <span class="card-copy"><strong>Lobo Urbano</strong><small>Barber shop</small></span>
-          <span class="card-action">VER PROJETO</span>
+          <span class="card-action" data-i18n="branding.view">VER PROJETO</span>
         </button>
       </section>
 
-      <p class="game-tip">CLICA NUMA CARTA PARA DESCOBRIR O PROJETO</p>
+      <p class="game-tip" data-i18n="branding.tip">CLICA NUMA CARTA PARA DESCOBRIR O PROJETO</p>
       <div class="brick-floor" aria-hidden="true"></div>
     </section>
   </main>
@@ -82,8 +90,8 @@
   <div class="modal" id="modal" hidden>
     <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <header class="modal-head">
-        <p>PROJECT FILE</p>
-        <button id="modalClose" type="button" aria-label="Fechar projeto">ESC ✕</button>
+        <p data-i18n="branding.file">FICHEIRO DO PROJETO</p>
+        <button id="modalClose" type="button" aria-label="Fechar projeto" data-i18n-aria-label="branding.close">ESC ✕</button>
       </header>
       <div class="modal-layout">
         <img id="modalImage" src="" alt="">
@@ -91,13 +99,16 @@
           <p class="modal-number" id="modalNumber"></p>
           <h2 id="modalTitle"></h2>
           <p id="modalDescription"></p>
-          <a class="pixel-button modal-link" id="modalLink" href="#" target="_blank" rel="noopener">VER PROJETO COMPLETO</a>
+          <a class="pixel-button modal-link" id="modalLink" href="#" target="_blank" rel="noopener" data-i18n="branding.full">VER PROJETO
+            COMPLETO</a>
         </div>
       </div>
     </article>
   </div>
 
+  <script src="../Javascript/translations.js" defer></script>
   <script src="../Javascript/branding.js" defer></script>
   <script src="../Javascript/background-music.js" defer></script>
 </body>
+
 </html>
