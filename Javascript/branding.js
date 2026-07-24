@@ -2,28 +2,28 @@ const projects = {
   casa: {
     number: "PROJECT 01 / 04",
     title: "Casa da Árvore",
-    image: "../imagens/casa-da-arvore.jpg",
+    image: "../imagens/casa-da-arvore.webp",
     description: "Projeto de identidade visual inspirado na natureza, na proximidade e na criatividade.",
     link: "../pdf/casa-arvore.pdf"
   },
   cafe: {
     number: "PROJECT 02 / 04",
     title: "Café Tôrres",
-    image: "../imagens/cafe-torres.jpg",
+    image: "../imagens/cafe-torres.webp",
     description: "Identidade visual para restauração, com uma linguagem simples, acolhedora e memorável.",
     link: "../pdf/cafe-torres.pdf"
   },
   dani: {
     number: "PROJECT 03 / 04",
     title: "Dani Braga Ink",
-    image: "../imagens/dani-braga-ink.jpg",
+    image: "../imagens/dani-braga-ink.webp",
     description: "Marca pessoal para tatuagem, construída com um símbolo forte, minimalista e expressivo.",
     link: "../pdf/dani-braga-ink.pdf"
   },
   lobo: {
     number: "PROJECT 04 / 04",
     title: "Lobo Urbano",
-    image: "../imagens/logo-lobo-urbano-preto.jpg",
+    image: "../imagens/logo-lobo-urbano-preto.webp",
     description: "Identidade visual para barbearia que combina o universo urbano com a personalidade marcante do lobo.",
     link: "../pdf/lobo-urbano.pdf"
   }
@@ -37,7 +37,6 @@ const modalTitle = document.getElementById("modalTitle");
 const modalDescription = document.getElementById("modalDescription");
 const modalLink = document.getElementById("modalLink");
 const modalClose = document.getElementById("modalClose");
-const themeButton = document.getElementById("themeBtn");
 let lastFocusedCard = null;
 
 marquee.textContent = " lOGOFOLIO • BRANDING • IDENTIDADE VISUAL •  ".repeat(18);
@@ -83,18 +82,4 @@ modal.addEventListener("click", event => {
 
 document.addEventListener("keydown", event => {
   if (event.key === "Escape") closeProject();
-});
-
-function setTheme(isDark) {
-  document.body.classList.toggle("dark-mode", isDark);
-  themeButton.textContent = isDark ? "☀" : "☾";
-  themeButton.setAttribute("aria-label", isDark ? "Ativar tema claro" : "Ativar tema escuro");
-}
-
-setTheme(localStorage.getItem("branding-theme") === "dark");
-
-themeButton.addEventListener("click", () => {
-  const isDark = !document.body.classList.contains("dark-mode");
-  setTheme(isDark);
-  localStorage.setItem("branding-theme", isDark ? "dark" : "light");
 });

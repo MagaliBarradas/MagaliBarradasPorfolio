@@ -52,7 +52,6 @@ const modalTitle = document.getElementById("serviceModalTitle");
 const modalIcon = document.getElementById("serviceModalIcon");
 const modalList = document.getElementById("serviceModalList");
 const modalClose = document.getElementById("serviceModalClose");
-const themeButton = document.getElementById("themeBtn");
 let lastFocusedButton = null;
 
 if (marquee) {
@@ -96,12 +95,4 @@ modal?.addEventListener("click", event => {
 
 document.addEventListener("keydown", event => {
     if (event.key === "Escape") closeService();
-});
-
-themeButton?.addEventListener("click", () => {
-    const deep = document.body.classList.toggle("deep-ocean");
-    themeButton.innerHTML = deep
-        ? '<i class="fa-solid fa-sun" aria-hidden="true"></i>'
-        : '<i class="fa-solid fa-water" aria-hidden="true"></i>';
-    themeButton.setAttribute("aria-label", deep ? "Ativar modo claro" : "Ativar modo profundo");
 });

@@ -96,7 +96,7 @@ h3,
     aspect-ratio: 16 / 10;
     border: 2px solid var(--border);
     border-radius: 14px;
-    background: #1a3a1a url("../imagens/mapa1.jpg") center / cover no-repeat;
+    background: #1a3a1a url("../imagens/mapa1.webp") center / cover no-repeat;
     touch-action: none;
 }
 
@@ -259,7 +259,7 @@ h3,
 .sprite {
     width: 120px;
     height: 120px;
-    background: url("../imagens/personagem.png") center / contain no-repeat;
+    background: url("../imagens/personagem.webp") center / contain no-repeat;
     filter: drop-shadow(0 4px 0 rgba(0, 0, 0, .4));
     animation: bob 1.2s ease-in-out infinite;
 }
@@ -301,7 +301,7 @@ h3,
     aspect-ratio: 16 / 10;
     border: 2px solid var(--border);
     border-radius: 6px;
-    background: url("../imagens/mapa1.jpg") center / cover;
+    background: url("../imagens/mapa1.webp") center / cover;
 }
 
 .mini-dot {

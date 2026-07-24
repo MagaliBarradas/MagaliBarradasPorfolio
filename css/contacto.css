@@ -26,18 +26,22 @@ body {
     padding: 36px 20px 0;
     background:
         linear-gradient(rgba(8, 12, 30, .36), rgba(8, 12, 30, .82)),
-        url("../imagens/contacto.png") center / cover fixed no-repeat;
+        url("../imagens/contacto.webp") center / cover fixed no-repeat;
 }
 
 /* ---------- CABEÇALHO ---------- */
 
 .contact-header {
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-columns: 1fr minmax(0, 2fr) 1fr;
     align-items: start;
     gap: 20px;
     width: min(1180px, 100%);
     margin: 0 auto 24px;
+}
+
+.contact-header > :first-child {
+    justify-self: start;
 }
 
 .contact-title {
@@ -418,7 +422,7 @@ body {
 body.contact-dark .contact-page {
     background:
         linear-gradient(rgba(3, 5, 18, .66), rgba(3, 5, 18, .9)),
-        url("../imagens/contacto.png") center / cover fixed no-repeat;
+        url("../imagens/contacto.webp") center / cover fixed no-repeat;
 }
 
 /* ---------- RESPONSIVO ---------- */
