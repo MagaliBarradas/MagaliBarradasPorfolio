@@ -1,0 +1,12 @@
+# Ficheiros auxiliares de ferramentas
+.agents/
+output/
+tmp/
+
+# Cópias temporárias criadas antes de alterações visuais
+*.before-redesign.*
+*.backup.*
+
+# Ficheiros do sistema operativo
+Thumbs.db
+.DS_Store
