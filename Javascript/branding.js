@@ -2,29 +2,29 @@ const projects = {
   casa: {
     number: "PROJECT 01 / 04",
     title: "Casa da Árvore",
-    image: "../imagens/casa-da-arvore.jpg",
-    description: "Projeto de identidade visual inspirado na natureza, na proximidade e na criatividade.",
+    image: "../imagens/casa-da-arvore.webp",
+    descriptionKey: "branding.casa.description",
     link: "../pdf/casa-arvore.pdf"
   },
   cafe: {
     number: "PROJECT 02 / 04",
     title: "Café Tôrres",
-    image: "../imagens/cafe-torres.jpg",
-    description: "Identidade visual para restauração, com uma linguagem simples, acolhedora e memorável.",
+    image: "../imagens/cafe-torres.webp",
+    descriptionKey: "branding.cafe.description",
     link: "../pdf/cafe-torres.pdf"
   },
   dani: {
     number: "PROJECT 03 / 04",
     title: "Dani Braga Ink",
-    image: "../imagens/dani-braga-ink.jpg",
-    description: "Marca pessoal para tatuagem, construída com um símbolo forte, minimalista e expressivo.",
+    image: "../imagens/dani-braga-ink.webp",
+    descriptionKey: "branding.dani.description",
     link: "../pdf/dani-braga-ink.pdf"
   },
   lobo: {
     number: "PROJECT 04 / 04",
     title: "Lobo Urbano",
-    image: "../imagens/logo-lobo-urbano-preto.jpg",
-    description: "Identidade visual para barbearia que combina o universo urbano com a personalidade marcante do lobo.",
+    image: "../imagens/logo-lobo-urbano-preto.webp",
+    descriptionKey: "branding.lobo.description",
     link: "../pdf/lobo-urbano.pdf"
   }
 };
@@ -37,10 +37,16 @@ const modalTitle = document.getElementById("modalTitle");
 const modalDescription = document.getElementById("modalDescription");
 const modalLink = document.getElementById("modalLink");
 const modalClose = document.getElementById("modalClose");
-const themeButton = document.getElementById("themeBtn");
 let lastFocusedCard = null;
 
-marquee.textContent = " lOGOFOLIO • BRANDING • IDENTIDADE VISUAL •  ".repeat(18);
+function updateMarquee() {
+  const text = window.i18n?.getLanguage() === "en"
+    ? " LOGOFOLIO • BRANDING • VISUAL IDENTITY • "
+    : " LOGOFOLIO • BRANDING • IDENTIDADE VISUAL • ";
+  marquee.textContent = text.repeat(18);
+}
+
+updateMarquee();
 
 function openProject(id, card) {
   const project = projects[id];
@@ -49,7 +55,8 @@ function openProject(id, card) {
   lastFocusedCard = card;
   modalNumber.textContent = project.number;
   modalTitle.textContent = project.title;
-  modalDescription.textContent = project.description;
+  modalDescription.dataset.i18n = project.descriptionKey;
+  modalDescription.textContent = window.i18n.t(project.descriptionKey);
   modalImage.src = project.image;
   modalImage.alt = project.title;
 
@@ -85,16 +92,4 @@ document.addEventListener("keydown", event => {
   if (event.key === "Escape") closeProject();
 });
 
-function setTheme(isDark) {
-  document.body.classList.toggle("dark-mode", isDark);
-  themeButton.textContent = isDark ? "☀" : "☾";
-  themeButton.setAttribute("aria-label", isDark ? "Ativar tema claro" : "Ativar tema escuro");
-}
-
-setTheme(localStorage.getItem("branding-theme") === "dark");
-
-themeButton.addEventListener("click", () => {
-  const isDark = !document.body.classList.contains("dark-mode");
-  setTheme(isDark);
-  localStorage.setItem("branding-theme", isDark ? "dark" : "light");
-});
+document.addEventListener("languagechange", updateMarquee);

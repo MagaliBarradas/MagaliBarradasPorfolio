@@ -67,9 +67,18 @@ body {
 
 .ocean-header {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr minmax(0, 2fr) 1fr;
     align-items: start;
     gap: 20px;
+}
+
+.ocean-header > :first-child {
+    justify-self: start;
+}
+
+.ocean-header .language-toggle {
+    min-width: 62px;
+    justify-self: end;
 }
 
 .ocean-title {
@@ -708,7 +717,7 @@ body.deep-ocean .ocean-world {
     background-color: #0865b7;
     background-image:
         linear-gradient(rgba(4, 31, 91, .08), rgba(4, 31, 91, .08)),
-        url("../imagens/fundo-servicos-oceano.png");
+        url("../imagens/fundo-servicos-oceano.webp");
     background-position: center, center top;
     background-size: cover, cover;
     background-repeat: no-repeat;
@@ -926,7 +935,7 @@ body.deep-ocean .ocean-world {
     background-color: #043b78;
     background-image:
         linear-gradient(rgba(1, 12, 55, .48), rgba(1, 12, 55, .48)),
-        url("../imagens/fundo-servicos-oceano.png");
+        url("../imagens/fundo-servicos-oceano.webp");
     background-position: center, center top;
     background-size: cover, cover;
     background-repeat: no-repeat;
@@ -959,11 +968,16 @@ body.deep-ocean .ocean-world {
     background: transparent;
     box-shadow: none;
     overflow: visible;
+    align-items: stretch;
 }
 
 .service-card {
     width: 100%;
     min-width: 0;
+}
+
+.service-card .open-service {
+    margin-top: auto;
 }
 
 @media (max-width: 1024px) {
@@ -1020,6 +1034,11 @@ body.deep-ocean .ocean-world {
         grid-column: 2;
         grid-row: 2;
         justify-self: end;
+    }
+
+    .ocean-header .language-toggle {
+        min-width: 52px;
+        padding-inline: 10px;
     }
 
     .ocean-title h1 {

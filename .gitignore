@@ -2,6 +2,7 @@
 .agents/
 output/
 tmp/
+originais/
 
 # Cópias temporárias criadas antes de alterações visuais
 *.before-redesign.*

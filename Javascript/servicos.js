@@ -1,16 +1,16 @@
 const services = {
     graphic: {
         level: "MISSION 01",
-        title: "DESIGN GRÁFICO",
+        titleKey: "services.graphic.title",
         icon: "fa-solid fa-palette",
         items: [
-            "Identidade visual e logótipos",
-            "Cartões de visita e papelaria",
-            "Posts para redes sociais",
-            "Flyers, cartazes, menus e catálogos",
-            "Apresentações profissionais",
-            "Banners e materiais publicitários",
-            "E-books e infográficos"
+            "services.graphic.item1",
+            "services.graphic.item2",
+            "services.graphic.item3",
+            "services.graphic.item4",
+            "services.graphic.item5",
+            "services.graphic.item6",
+            "services.graphic.item7"
         ]
     },
     ux: {
@@ -18,14 +18,14 @@ const services = {
         title: "UI/UX DESIGN",
         icon: "fa-solid fa-pen-ruler",
         items: [
-            "Design de sites e aplicações",
-            "Wireframes e protótipos no Figma",
-            "Landing pages",
-            "Design responsivo para computador e telemóvel",
-            "Pesquisa com utilizadores",
-            "Testes de usabilidade",
-            "Auditoria e melhoria de interfaces",
-            "Criação de design systems"
+            "services.ux.item1",
+            "services.ux.item2",
+            "services.ux.item3",
+            "services.ux.item4",
+            "services.ux.item5",
+            "services.ux.item6",
+            "services.ux.item7",
+            "services.ux.item8"
         ]
     },
     frontend: {
@@ -33,14 +33,14 @@ const services = {
         title: "FRONT-END",
         icon: "fa-solid fa-code",
         items: [
-            "Desenvolvimento de sites responsivos",
-            "Landing pages para empresas e campanhas",
-            "Conversão de designs do Figma em código",
-            "Interfaces em HTML, CSS e JavaScript",
-            "Projetos com React, Vue ou tecnologias semelhantes",
-            "Manutenção e melhoria de sites",
-            "Correção de problemas visuais e de responsividade",
-            "Otimização de acessibilidade e desempenho"
+            "services.frontend.item1",
+            "services.frontend.item2",
+            "services.frontend.item3",
+            "services.frontend.item4",
+            "services.frontend.item5",
+            "services.frontend.item6",
+            "services.frontend.item7",
+            "services.frontend.item8"
         ]
     }
 };
@@ -52,12 +52,18 @@ const modalTitle = document.getElementById("serviceModalTitle");
 const modalIcon = document.getElementById("serviceModalIcon");
 const modalList = document.getElementById("serviceModalList");
 const modalClose = document.getElementById("serviceModalClose");
-const themeButton = document.getElementById("themeBtn");
 let lastFocusedButton = null;
 
-if (marquee) {
-    marquee.textContent = " OCEAN WORLD  •  SERVIÇOS  •  SELECT YOUR MISSION  • ".repeat(14);
+function updateMarquee() {
+    if (!marquee) return;
+    const text = window.i18n?.getLanguage() === "en"
+        ? " OCEAN WORLD  •  SERVICES  •  SELECT YOUR MISSION  • "
+        : " OCEAN WORLD  •  SERVIÇOS  •  SELECIONA A TUA MISSÃO  • ";
+    marquee.textContent = text.repeat(14);
 }
+
+updateMarquee();
+document.addEventListener("languagechange", updateMarquee);
 
 function openService(id, trigger) {
     const service = services[id];
@@ -65,11 +71,18 @@ function openService(id, trigger) {
 
     lastFocusedButton = trigger;
     modalLevel.textContent = service.level;
-    modalTitle.textContent = service.title;
+    if (service.titleKey) {
+        modalTitle.dataset.i18n = service.titleKey;
+        modalTitle.textContent = window.i18n.t(service.titleKey);
+    } else {
+        modalTitle.removeAttribute("data-i18n");
+        modalTitle.textContent = service.title;
+    }
     modalIcon.innerHTML = `<i class="${service.icon}" aria-hidden="true"></i>`;
-    modalList.replaceChildren(...service.items.map(item => {
+    modalList.replaceChildren(...service.items.map(itemKey => {
         const listItem = document.createElement("li");
-        listItem.textContent = item;
+        listItem.dataset.i18n = itemKey;
+        listItem.textContent = window.i18n.t(itemKey);
         return listItem;
     }));
 
@@ -96,12 +109,4 @@ modal?.addEventListener("click", event => {
 
 document.addEventListener("keydown", event => {
     if (event.key === "Escape") closeService();
-});
-
-themeButton?.addEventListener("click", () => {
-    const deep = document.body.classList.toggle("deep-ocean");
-    themeButton.innerHTML = deep
-        ? '<i class="fa-solid fa-sun" aria-hidden="true"></i>'
-        : '<i class="fa-solid fa-water" aria-hidden="true"></i>';
-    themeButton.setAttribute("aria-label", deep ? "Ativar modo claro" : "Ativar modo profundo");
 });

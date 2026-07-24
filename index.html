@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Magali Barradas — Portfólio Criativo</title>
+    <title data-i18n="meta.home">Magali Barradas — Portfólio Criativo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
@@ -19,8 +19,8 @@
         <div class="about-card">
             <div class="about-header">
                 <h2>Magali Barradas</h2>
-                <p class="job">Designer Gráfico • Branding • UI/UX • Frontend</p>
-                <p class="desc">
+                <p class="job" data-i18n="home.job">Designer Gráfico • Branding • UI/UX • Frontend</p>
+                <p class="desc" data-i18n="home.description">
                     Transformo ideias em experiências visuais memoráveis,
                     criando marcas e interfaces modernas com foco na experiência do utilizador.
                 </p>
@@ -28,7 +28,7 @@
 
             <div class="about-columns">
                 <div class="about-box">
-                    <h3>⭐ Skills</h3>
+                    <h3 data-i18n="home.skills">⭐ Competências</h3>
                     <ul>
                         <li>🎨 Branding</li>
                         <li>💻 UI/UX Design</li>
@@ -40,12 +40,12 @@
                 </div>
 
                 <div class="about-box">
-                    <h3>📍 Contacto</h3>
+                    <h3 data-i18n="home.contact">📍 Contacto</h3>
                     <p>✉ magalicsbarradas@gmail.com</p>
-                    <p>📍 Porto • Portugal</p>
+                    <p data-i18n="home.location">📍 Porto • Portugal</p>
 
                     <a class="panel cv" href="./download/CV MAGALI BARRADAS DESIGN FRONTEND.pdf" download>
-                        ⬇ DOWNLOAD CV
+                        <span data-i18n="home.download">⬇ DESCARREGAR CV</span>
                     </a>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                         class="fa-brands fa-github"></i></a>
             </div>
 
-            <p class="about-quote">
+            <p class="about-quote" data-i18n="home.quote">
                 "Cada projeto é uma nova fase. O objetivo é sempre criar uma experiência memorável."
             </p>
         </div>
@@ -75,18 +75,16 @@
         <div class="map" id="map">
 
             <header class="greeting">
-                <h1>Olá, Sou a <span class="accent">Magali</span></h1>
-                <p>Explore meu mundo e descubra mais sobre mim! <span class="accent">✦</span></p>
+                <h1><span data-i18n="home.greeting">Olá, sou a</span> <span class="accent">Magali</span></h1>
+                <p><span data-i18n="home.intro">Explora o meu mundo e descobre mais sobre mim!</span> <span class="accent">✦</span></p>
             </header>
 
             <div class="top-buttons">
-                <button class="panel btn-icon">♪</button>
-                <button class="panel btn-icon" id="themeBtn">☾</button>
-                <button class="panel btn-icon">PT</button>
+                <button class="panel btn-icon language-toggle" type="button" data-language-toggle aria-label="Mudar para inglês">EN</button>
             </div>
 
             <aside class="panel controls">
-                <div class="label">CONTROLOS</div>
+                <div class="label" data-i18n="home.controls">CONTROLOS</div>
 
                 <div class="row">
                     <div class="keys">
@@ -95,24 +93,24 @@
                         <span class="key">🡄</span>
                         <span class="key">🡆</span>
                     </div>
-                    <span>Mover</span>
+                    <span data-i18n="home.move">Mover</span>
                 </div>
 
                 <div class="row">
                     <div class="keys"><span class="key">Enter</span></div>
-                    <span>Interagir</span>
+                    <span data-i18n="home.interact">Interagir</span>
                 </div>
 
                 <div class="row">
                     <div class="keys"><span class="key">Esc</span></div>
-                    <span>Fechar</span>
+                    <span data-i18n="home.close">Fechar</span>
                 </div>
 
-                <p class="hint">Explore o mapa e descubra cada área do meu portfólio!</p>
+                <p class="hint" data-i18n="home.hint">Explora o mapa e descobre cada área do meu portefólio!</p>
             </aside>
 
             <button class="coin" data-id="sobre" style="left:22%;top:68%">
-                <span class="bubble">Sobre Mim</span>
+                <span class="bubble" data-i18n="home.about">Sobre Mim</span>
             </button>
 
             <button class="coin" data-id="ux" style="left:71%;top:69%">
@@ -124,15 +122,15 @@
             </button>
 
             <button class="coin" data-id="contacto" style="left:74%;top:20%">
-                <span class="bubble">Contacto</span>
+                <span class="bubble" data-i18n="home.contactArea">Contacto</span>
             </button>
 
             <button class="coin coin-services" data-id="servicos" style="left:50%;top:29%">
-                <span class="bubble">Serviços</span>
+                <span class="bubble" data-i18n="home.services">Serviços</span>
             </button>
 
             <div class="character" id="char" style="left:45%;top:72%">
-                <div class="bubble hint-bubble" id="hintBubble"> Use as setas<br>para mover
+                <div class="bubble hint-bubble" id="hintBubble" data-i18n-html="home.moveHint">Usa as setas<br>para mover
                 </div>
                 <div class="sprite"></div>
             </div>
@@ -152,21 +150,22 @@
 
         </div>
 
-        <div class="mobile-gamepad" aria-label="Comando de jogo para telemóvel">
+        <div class="mobile-gamepad" aria-label="Comando de jogo para telemóvel" data-i18n-aria-label="home.mobileController">
             <span class="gamepad-brand">MAGALI PLAY</span>
-            <div class="gamepad-dpad" aria-label="Mover personagem">
-                <button class="gamepad-up" data-dir="up" type="button" aria-label="Mover para cima">▲</button>
-                <button class="gamepad-left" data-dir="left" type="button" aria-label="Mover para a esquerda">◀</button>
+            <div class="gamepad-dpad" aria-label="Mover personagem" data-i18n-aria-label="home.moveCharacter">
+                <button class="gamepad-up" data-dir="up" type="button" aria-label="Mover para cima" data-i18n-aria-label="home.moveUp">▲</button>
+                <button class="gamepad-left" data-dir="left" type="button" aria-label="Mover para a esquerda" data-i18n-aria-label="home.moveLeft">◀</button>
                 <span class="gamepad-center-dot" aria-hidden="true"></span>
-                <button class="gamepad-right" data-dir="right" type="button" aria-label="Mover para a direita">▶</button>
-                <button class="gamepad-down" data-dir="down" type="button" aria-label="Mover para baixo">▼</button>
+                <button class="gamepad-right" data-dir="right" type="button"
+                    aria-label="Mover para a direita" data-i18n-aria-label="home.moveRight">▶</button>
+                <button class="gamepad-down" data-dir="down" type="button" aria-label="Mover para baixo" data-i18n-aria-label="home.moveDown">▼</button>
             </div>
             <div class="gamepad-middle" aria-hidden="true"><span>SELECT</span><span>START</span></div>
             <div class="gamepad-actions">
-                <button class="gamepad-x" data-action="interact" type="button" aria-label="Interagir">X</button>
-                <button class="gamepad-y" data-action="interact" type="button" aria-label="Interagir">Y</button>
-                <button class="gamepad-a" data-action="interact" type="button" aria-label="Interagir">A</button>
-                <button class="gamepad-b" data-action="interact" type="button" aria-label="Interagir">B</button>
+                <button class="gamepad-x" data-action="interact" type="button" aria-label="Interagir" data-i18n-aria-label="home.interact">X</button>
+                <button class="gamepad-y" data-action="interact" type="button" aria-label="Interagir" data-i18n-aria-label="home.interact">Y</button>
+                <button class="gamepad-a" data-action="interact" type="button" aria-label="Interagir" data-i18n-aria-label="home.interact">A</button>
+                <button class="gamepad-b" data-action="interact" type="button" aria-label="Interagir" data-i18n-aria-label="home.interact">B</button>
             </div>
         </div>
     </main>
@@ -181,7 +180,9 @@
         </div>
     </div>
 
+    <script src="./Javascript/translations.js" defer></script>
     <script src="./Javascript/script.js" defer></script>
+    <script src="./Javascript/background-music.js" defer></script>
 
 </body>
 

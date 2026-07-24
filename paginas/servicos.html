@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="pt">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Serviços | Magali Barradas</title>
+    <title data-i18n="meta.services">Serviços | Magali Barradas</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,75 +24,75 @@
         <header class="ocean-header">
             <a class="ocean-button" href="../index.html">
                 <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-                MAPA
+                <span data-i18n="nav.map">MAPA</span>
             </a>
 
             <div class="ocean-title">
-                <span>SELECT YOUR MISSION</span>
-                <h1>SERVIÇOS</h1>
-                <p>Mergulha nas áreas onde posso ajudar o teu projeto a ganhar vida.</p>
+                <span data-i18n="services.select">SELECIONA A TUA MISSÃO</span>
+                <h1 data-i18n="services.title">SERVIÇOS</h1>
+                <p data-i18n="services.intro">Mergulha nas áreas onde posso ajudar o teu projeto a ganhar vida.</p>
             </div>
 
-            <button class="ocean-button" id="themeBtn" type="button" aria-label="Ativar modo profundo">
-                <i class="fa-solid fa-water" aria-hidden="true"></i>
-            </button>
+            <button class="ocean-button language-toggle" type="button" data-language-toggle aria-label="Mudar para inglês">EN</button>
         </header>
 
-        <div class="ocean-hud" aria-label="Informações da fase">
+        <div class="ocean-hud" aria-label="Informações da fase" data-i18n-aria-label="services.phaseInfo">
             <span>PLAYER: MAGALI</span>
             <span>WORLD: OCEAN</span>
             <span>MISSIONS: 03</span>
         </div>
 
         <div class="swimming-player" aria-hidden="true">
-            <img class="swim-frame swim-frame-one" src="../imagens/personagem-nadando-1.png" alt="">
-            <img class="swim-frame swim-frame-two" src="../imagens/personagem-nadando-2.png" alt="">
+            <img class="swim-frame swim-frame-one" src="../imagens/personagem-nadando-1.webp" alt="" width="700"
+                height="700" decoding="async">
+            <img class="swim-frame swim-frame-two" src="../imagens/personagem-nadando-2.webp" alt="" width="700"
+                height="700" decoding="async">
         </div>
 
         <section class="service-intro">
             <div class="diver-avatar" aria-hidden="true">
-                <img src="../imagens/personagem.png" alt="">
+                <img src="../imagens/personagem.webp" alt="" width="817" height="816" decoding="async">
             </div>
             <div>
                 <span class="mission-label">OCEAN WORLD</span>
-                <h2>ESCOLHE UMA ÁREA</h2>
-                <p>Cada cápsula contém um conjunto de serviços. Seleciona uma missão para veres todos os detalhes.</p>
+                <h2 data-i18n="services.choose">ESCOLHE UMA ÁREA</h2>
+                <p data-i18n="services.chooseDescription">Cada cápsula contém um conjunto de serviços. Seleciona uma missão para veres todos os detalhes.</p>
             </div>
         </section>
 
-        <section class="service-grid" aria-label="Áreas de serviços">
+        <section class="service-grid" aria-label="Áreas de serviços" data-i18n-aria-label="services.areas">
             <article class="service-card graphic-card">
                 <span class="card-level">MISSION 01</span>
                 <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-palette"></i></div>
-                <h2>DESIGN GRÁFICO</h2>
-                <p>Identidade, comunicação visual e materiais que tornam a tua marca reconhecível.</p>
-                <button class="open-service" type="button" data-service="graphic">EXPLORAR</button>
+                <h2 data-i18n="services.graphic.title">DESIGN GRÁFICO</h2>
+                <p data-i18n="services.graphic.description">Identidade, comunicação visual e materiais que tornam a tua marca reconhecível.</p>
+                <button class="open-service" type="button" data-service="graphic" data-i18n="services.explore">EXPLORAR</button>
             </article>
 
             <article class="service-card ux-card">
                 <span class="card-level">MISSION 02</span>
                 <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-pen-ruler"></i></div>
                 <h2>UI/UX DESIGN</h2>
-                <p>Experiências digitais claras, acessíveis e pensadas para os utilizadores.</p>
-                <button class="open-service" type="button" data-service="ux">EXPLORAR</button>
+                <p data-i18n="services.ux.description">Experiências digitais claras, acessíveis e pensadas para os utilizadores.</p>
+                <button class="open-service" type="button" data-service="ux" data-i18n="services.explore">EXPLORAR</button>
             </article>
 
             <article class="service-card frontend-card">
                 <span class="card-level">MISSION 03</span>
                 <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-code"></i></div>
                 <h2>FRONT-END</h2>
-                <p>Interfaces responsivas que transformam o design numa experiência funcional.</p>
-                <button class="open-service" type="button" data-service="frontend">EXPLORAR</button>
+                <p data-i18n="services.frontend.description">Interfaces responsivas que transformam o design numa experiência funcional.</p>
+                <button class="open-service" type="button" data-service="frontend" data-i18n="services.explore">EXPLORAR</button>
             </article>
         </section>
 
         <section class="ocean-cta">
             <div>
                 <span>FINAL MISSION</span>
-                <h2>PRONTA PARA COMEÇAR?</h2>
-                <p>Conta-me sobre o teu projeto e encontramos a solução certa.</p>
+                <h2 data-i18n="services.ready">PRONTA PARA COMEÇAR?</h2>
+                <p data-i18n="services.readyDescription">Conta-me sobre o teu projeto e encontramos a solução certa.</p>
             </div>
-            <a class="ocean-button cta-button" href="./contacto.html">INICIAR MISSÃO</a>
+            <a class="ocean-button cta-button" href="./contacto.html" data-i18n="services.start">INICIAR MISSÃO</a>
         </section>
 
     </main>
@@ -103,16 +104,19 @@
                     <span id="serviceModalLevel"></span>
                     <h2 id="serviceModalTitle"></h2>
                 </div>
-                <button id="serviceModalClose" type="button" aria-label="Fechar serviços">ESC ✕</button>
+                <button id="serviceModalClose" type="button" aria-label="Fechar serviços" data-i18n-aria-label="services.close">ESC ✕</button>
             </header>
             <div class="service-modal-content">
                 <div class="modal-icon" id="serviceModalIcon" aria-hidden="true"></div>
                 <ul id="serviceModalList"></ul>
             </div>
-            <a class="ocean-button modal-contact" href="./contacto.html">PEDIR ORÇAMENTO</a>
+            <a class="ocean-button modal-contact" href="./contacto.html" data-i18n="services.quote">PEDIR ORÇAMENTO</a>
         </article>
     </div>
 
+    <script src="../Javascript/translations.js" defer></script>
     <script src="../Javascript/servicos.js" defer></script>
+    <script src="../Javascript/background-music.js" defer></script>
 </body>
+
 </html>
