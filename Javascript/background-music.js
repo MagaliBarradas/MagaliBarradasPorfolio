@@ -139,8 +139,8 @@
 
   const play = () => {
     if (!isEnabled()) return;
-    audio.play().catch(() => {
-      /* O navegador pode aguardar pela primeira interação do visitante. */
+    return audio.play().catch(() => {
+      /* Se o autoplay for bloqueado, a primeira interação inicia a música. */
     });
   };
 
@@ -189,4 +189,10 @@
   updateButton();
   document.head.appendChild(style);
   document.body.appendChild(button);
+
+  /*
+   * Tenta iniciar imediatamente. Os navegadores que bloqueiam autoplay
+   * mantêm a música pronta para começar na primeira interação do visitante.
+   */
+  play();
 })();
