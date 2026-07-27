@@ -350,12 +350,18 @@ body {
     line-height: 1.5;
 }
 
-.availability > span {
+.availability-dot {
+    flex: 0 0 9px;
     width: 9px;
     height: 9px;
     background: var(--contact-success);
     box-shadow: 0 0 10px var(--contact-success);
     animation: statusBlink 1.4s steps(1, end) infinite;
+}
+
+.availability [data-i18n="contact.available"] {
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 @keyframes statusBlink {
@@ -521,7 +527,7 @@ body.contact-dark .contact-page {
 
 @media (prefers-reduced-motion: reduce) {
     .avatar-image,
-    .availability > span {
+    .availability-dot {
         animation: none;
     }
 
