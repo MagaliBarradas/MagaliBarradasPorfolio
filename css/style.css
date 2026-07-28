@@ -619,28 +619,28 @@ h3,
 
     /* Posições próprias para o enquadramento vertical do telemóvel. */
     .coin[data-id="branding"] {
-        top: 29% !important;
-        left: 7% !important;
+        top: 32% !important;
+        left: 10% !important;
     }
 
     .coin[data-id="contacto"] {
-        top: 40% !important;
-        left: 89% !important;
+        top: 42% !important;
+        left: 86% !important;
     }
 
     .coin[data-id="sobre"] {
-        top: 65% !important;
-        left: 7% !important;
+        top: 66% !important;
+        left: 12% !important;
     }
 
     .coin[data-id="ux"] {
-        top: 67% !important;
-        left: 91% !important;
+        top: 68% !important;
+        left: 86% !important;
     }
 
     .coin[data-id="servicos"] {
-        top: 25% !important;
-        left: 42% !important;
+        top: 34% !important;
+        left: 44% !important;
     }
 
     .coin[data-id="branding"] .bubble,
