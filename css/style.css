@@ -625,7 +625,7 @@ h3,
 
     .coin[data-id="contacto"] {
         top: 42% !important;
-        left: 86% !important;
+        left: 84% !important;
     }
 
     .coin[data-id="sobre"] {
@@ -635,7 +635,7 @@ h3,
 
     .coin[data-id="ux"] {
         top: 68% !important;
-        left: 86% !important;
+        left: 82% !important;
     }
 
     .coin[data-id="servicos"] {
@@ -643,17 +643,10 @@ h3,
         left: 44% !important;
     }
 
-    .coin[data-id="branding"] .bubble,
-    .coin[data-id="sobre"] .bubble {
-        left: 0;
-        transform: none;
-    }
-
-    .coin[data-id="contacto"] .bubble,
-    .coin[data-id="ux"] .bubble {
-        right: 0;
-        left: auto;
-        transform: none;
+    .coin .bubble {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .sprite { width: 72px; height: 72px; }

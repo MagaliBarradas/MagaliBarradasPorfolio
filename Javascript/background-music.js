@@ -116,6 +116,10 @@
       .home-page .mobile-gamepad .music-toggle:hover {
         transform: translateX(50%) translateY(-3px) rotate(-1deg);
       }
+      .home-page > .music-toggle {
+        right: max(10px, env(safe-area-inset-right));
+        bottom: max(218px, calc(208px + env(safe-area-inset-bottom)));
+      }
       .music-toggle__icon { width: 30px; height: 30px; font-size: 19px; }
       .music-toggle__label { font-size: 7px; }
       .music-toggle__state { font-size: 6px; }
@@ -202,9 +206,11 @@
 
   const mobileHomeQuery = window.matchMedia("(max-width: 650px)");
   const mobileGamepad = document.querySelector(".home-page .mobile-gamepad");
+  const aboutModal = document.getElementById("modal");
 
   const placeMusicButton = () => {
-    const target = mobileHomeQuery.matches && mobileGamepad
+    const aboutIsOpen = aboutModal && !aboutModal.hidden;
+    const target = mobileHomeQuery.matches && mobileGamepad && !aboutIsOpen
       ? mobileGamepad
       : document.body;
 
@@ -213,6 +219,13 @@
 
   placeMusicButton();
   mobileHomeQuery.addEventListener?.("change", placeMusicButton);
+
+  if (aboutModal) {
+    new MutationObserver(placeMusicButton).observe(aboutModal, {
+      attributes: true,
+      attributeFilter: ["hidden"]
+    });
+  }
 
   /*
    * Tenta iniciar imediatamente. Os navegadores que bloqueiam autoplay
