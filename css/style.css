@@ -257,11 +257,38 @@ h3,
 }
 
 .sprite {
-    width: 120px;
-    height: 120px;
-    background: url("../imagens/personagem.webp") center / contain no-repeat;
-    filter: drop-shadow(0 4px 0 rgba(0, 0, 0, .4));
-    animation: bob 1.2s ease-in-out infinite;
+  width: 120px;
+  height: 120px;
+  background: url("../imagens/personagem.webp") center / contain no-repeat;
+  filter: drop-shadow(0 4px 0 rgba(0, 0, 0, .4));
+  animation: bob 1.2s ease-in-out infinite;
+}
+
+.character.is-swimming .sprite {
+    background-image: url("../imagens/personagem-mergulho-v3.png");
+}
+
+.character.is-swimming::after {
+    content: "° ｡ ○";
+    position: absolute;
+    top: 12%;
+    right: -16%;
+    color: rgba(225, 248, 255, .95);
+    font: 16px/1 "Press Start 2P", monospace;
+    text-shadow: 1px 1px 0 #0878c9;
+    pointer-events: none;
+    animation: dive-bubbles 1.2s steps(3, end) infinite;
+}
+
+@keyframes dive-bubbles {
+    from {
+        opacity: .25;
+        transform: translateY(12px) scale(.75);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-15px) scale(1);
+    }
 }
 
 .hint-bubble {
@@ -592,29 +619,43 @@ h3,
 
     /* Posições próprias para o enquadramento vertical do telemóvel. */
     .coin[data-id="branding"] {
-        top: 28% !important;
-        left: 27% !important;
+        top: 29% !important;
+        left: 7% !important;
     }
 
     .coin[data-id="contacto"] {
-        top: 28% !important;
-        left: 73% !important;
+        top: 40% !important;
+        left: 89% !important;
     }
 
     .coin[data-id="sobre"] {
-        top: 68% !important;
-        left: 27% !important;
+        top: 65% !important;
+        left: 7% !important;
     }
 
     .coin[data-id="ux"] {
-        top: 68% !important;
-        left: 73% !important;
+        top: 67% !important;
+        left: 91% !important;
     }
 
     .coin[data-id="servicos"] {
-        top: 47% !important;
-        left: 50% !important;
+        top: 25% !important;
+        left: 42% !important;
     }
+
+    .coin[data-id="branding"] .bubble,
+    .coin[data-id="sobre"] .bubble {
+        left: 0;
+        transform: none;
+    }
+
+    .coin[data-id="contacto"] .bubble,
+    .coin[data-id="ux"] .bubble {
+        right: 0;
+        left: auto;
+        transform: none;
+    }
+
     .sprite { width: 72px; height: 72px; }
 
     .modal-card { width: 94vw; padding: 18px; }

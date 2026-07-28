@@ -24,11 +24,75 @@ const SECTIONS = {
 
 let pos = { x: 45, y: 72 };
 let hasMoved = false;
+const mapImage = new Image();
+const mapCanvas = document.createElement("canvas");
+const mapContext = mapCanvas.getContext("2d", { willReadFrequently: true });
+let mapPixelsReady = false;
+
+mapImage.addEventListener("load", () => {
+  mapCanvas.width = mapImage.naturalWidth;
+  mapCanvas.height = mapImage.naturalHeight;
+  mapContext.drawImage(mapImage, 0, 0);
+  mapPixelsReady = true;
+  updateWaterState();
+});
+
+mapImage.src = "./imagens/mapa1.webp";
+
+function isWaterPixel(red, green, blue, alpha) {
+  return alpha > 0
+    && blue > 105
+    && blue > red * 1.45
+    && blue > green * 1.18;
+}
+
+function isCharacterInWater() {
+  if (!map || !mapPixelsReady || !mapContext) return false;
+
+  const mapWidth = map.clientWidth;
+  const mapHeight = map.clientHeight;
+  if (!mapWidth || !mapHeight) return false;
+
+  const scale = Math.max(
+    mapWidth / mapImage.naturalWidth,
+    mapHeight / mapImage.naturalHeight
+  );
+  const renderedWidth = mapImage.naturalWidth * scale;
+  const renderedHeight = mapImage.naturalHeight * scale;
+  const offsetX = (mapWidth - renderedWidth) / 2;
+  const offsetY = (mapHeight - renderedHeight) / 2;
+  const sourceX = ((pos.x / 100) * mapWidth - offsetX) / scale;
+  const sourceY = ((pos.y / 100) * mapHeight - offsetY) / scale;
+  const radius = Math.max(2, Math.round(4 / scale));
+  const startX = Math.max(0, Math.round(sourceX) - radius);
+  const startY = Math.max(0, Math.round(sourceY) - radius);
+  const sampleWidth = Math.min(mapImage.naturalWidth - startX, radius * 2 + 1);
+  const sampleHeight = Math.min(mapImage.naturalHeight - startY, radius * 2 + 1);
+
+  if (sampleWidth <= 0 || sampleHeight <= 0) return false;
+
+  const pixels = mapContext.getImageData(startX, startY, sampleWidth, sampleHeight).data;
+  let waterPixels = 0;
+  const pixelCount = pixels.length / 4;
+
+  for (let index = 0; index < pixels.length; index += 4) {
+    if (isWaterPixel(pixels[index], pixels[index + 1], pixels[index + 2], pixels[index + 3])) {
+      waterPixels++;
+    }
+  }
+
+  return waterPixels / pixelCount >= 0.55;
+}
+
+function updateWaterState() {
+  char?.classList.toggle("is-swimming", isCharacterInWater());
+}
 
 function render() {
   if (!char) return;
   char.style.left = `${pos.x}%`;
   char.style.top = `${pos.y}%`;
+  updateWaterState();
 
   if (miniDot) {
     miniDot.style.left = `${pos.x}%`;
@@ -110,6 +174,8 @@ function interactWithNearestSection() {
     window.setTimeout(() => { hintBubble.style.display = "none"; }, 1600);
   }
 }
+
+window.addEventListener("resize", updateWaterState);
 
 document.getElementById("modalClose")?.addEventListener("click", closeModal);
 

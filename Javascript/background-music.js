@@ -106,6 +106,9 @@
         border-radius: 14px 14px 5px 14px;
         box-shadow: 4px 4px 0 #130d38;
       }
+      .home-page .music-toggle {
+        bottom: max(218px, calc(208px + env(safe-area-inset-bottom)));
+      }
       .music-toggle__icon { width: 30px; height: 30px; font-size: 19px; }
       .music-toggle__label { font-size: 7px; }
       .music-toggle__state { font-size: 6px; }
